@@ -3,83 +3,163 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Odyssa - Application de planification de voyages. Informations légales, politique de confidentialité et support.">
-  <title>Odyssa - Informations Légales</title>
+  <meta name="description" content="Odyssa - Planifiez, organisez et partagez vos voyages. Itinéraires, documents, budgets et partage de dépenses dans votre poche. Disponible sur l'App Store.">
+  <title>Odyssa - Planifiez, Organisez, Voyagez</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <div class="logo">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-          <path d="M2 12h20"></path>
-        </svg>
+
+  <!-- Hero -->
+  <section class="hero-section" id="hero">
+    <div class="hero-logo-floating">
+      <img src="assets/odyssa-logo.png" alt="Odyssa">
+      <span>Odyssa</span>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Planifiez, Organisez, Voyagez.</h1>
+        <p class="hero-subtitle">Fini les notes éparpillées et les calculs de remboursements entre amis. Tout ce dont vous avez besoin pour un voyage réussi, dans une seule application.</p>
       </div>
-      <h1>Odyssa</h1>
-      <p class="tagline">Planifiez vos voyages en toute simplicité</p>
-    </header>
-
-    <main>
-      <section class="cards">
-        <a href="privacy-policy.html" class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-          </div>
-          <h2>Politique de Confidentialité</h2>
-          <p>Découvrez comment nous protégeons vos données personnelles</p>
-        </a>
-
-        <a href="terms-of-service.html" class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-          </div>
-          <h2>Conditions d'Utilisation</h2>
-          <p>Les règles qui régissent l'utilisation de notre application</p>
-        </a>
-
-        <a href="support.html" class="card">
-          <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-              <line x1="12" y1="17" x2="12.01" y2="17"></line>
-            </svg>
-          </div>
-          <h2>Support</h2>
-          <p>Besoin d'aide ? Contactez notre équipe</p>
-        </a>
-      </section>
-
-      <section class="app-info">
-        <h2>Télécharger Odyssa</h2>
-        <p>Disponible sur iOS et Android</p>
-        <div class="store-badges">
-          <a href="#" class="store-badge" aria-label="Télécharger sur l'App Store">
-            <svg width="120" height="40" viewBox="0 0 120 40" fill="currentColor">
-              <rect width="120" height="40" rx="6" fill="#000"/>
-              <text x="60" y="25" text-anchor="middle" fill="#fff" font-size="12" font-family="system-ui">App Store</text>
-            </svg>
-          </a>
+      <div class="hero-mockup">
+        <div class="phone-frame">
+          <img src="assets/IMG_2551.PNG" alt="Aperçu de l'application Odyssa - Liste de voyages">
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="hero-cta-center">
+        <a href="https://apps.apple.com/fr/app/odyssa/id6746782407" class="btn-store" aria-label="Télécharger sur l'App Store">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <div class="btn-store-text">
+            <span class="btn-store-label">Télécharger sur</span>
+            <span class="btn-store-name">App Store</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <p>&copy; 2026 Odyssa. Tous droits réservés.</p>
-      <p>Contact : <a href="mailto:contact.odyssa@proton.me">contact.odyssa@proton.me</a></p>
-    </footer>
-  </div>
+  <!-- Fonctionnalités -->
+  <section class="features-section" id="features">
+    <div class="features-container">
+      <h2>Tout ce dont vous avez besoin</h2>
+      <p class="features-subtitle">Des outils pensés pour simplifier chaque étape de vos voyages.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+              <line x1="9" y1="3" x2="9" y2="18"/>
+              <line x1="15" y1="6" x2="15" y2="21"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Itinéraires détaillés</h3>
+            <p>Organisez chaque journée avec 10 types d'activités : transport, hébergement, restaurant et bien plus.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Documents centralisés</h3>
+            <p>Billets d'avion, passeports, assurances et vouchers. Plus besoin de fouiller dans vos emails.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Partage de dépenses</h3>
+            <p>Odyssa calcule automatiquement les remboursements. Support de 7 devises internationales.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Voyagez à plusieurs</h3>
+            <p>Planifiez ensemble en temps réel et gardez tout le monde informé.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 11 12 14 22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Listes de tâches</h3>
+            <p>Ne rien oublier avant le départ : valise, réservations, documents. Priorités et dates d'échéance.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="1" y1="1" x2="23" y2="23"/>
+              <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+              <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+              <path d="M10.71 5.05A16 16 0 0 1 22.56 9"/>
+              <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+              <line x1="12" y1="20" x2="12.01" y2="20"/>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h3>Mode hors ligne</h3>
+            <p>Accédez à vos voyages même sans connexion. Idéal en avion ou à l'étranger.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">Odyssa</span>
+        <p>&copy; 2026 Odyssa. Tous droits réservés.</p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Politique de Confidentialité</a>
+        <a href="terms-of-service.html">Conditions d'Utilisation</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:contact.odyssa@proton.me">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname);
+      window.scrollTo(0, 0);
+    }
+  </script>
+
 </body>
 </html>

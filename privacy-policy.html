@@ -8,27 +8,42 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body>
-  <div class="container">
-    <header class="legal-header">
-      <a href="index.html" class="back-link">
+<body class="legal-page">
+
+  <nav class="legal-topbar">
+    <div class="legal-topbar-inner">
+      <a href="index.html" class="legal-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="19" y1="12" x2="5" y2="12"></line>
-          <polyline points="12 19 5 12 12 5"></polyline>
+          <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
-        Retour à l'accueil
+        Accueil
       </a>
+      <span class="legal-topbar-brand">Odyssa</span>
+    </div>
+  </nav>
+
+  <header class="legal-hero">
+    <div class="legal-hero-inner">
+      <div class="legal-hero-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
       <h1>Politique de Confidentialité</h1>
-      <p class="last-update">Dernière mise à jour : Janvier 2026</p>
-    </header>
+      <p class="legal-date">Dernière mise à jour : Janvier 2026</p>
+    </div>
+  </header>
 
-    <main class="content">
-      <h2>1. Introduction</h2>
-      <p>
-        Odyssa s'engage à protéger votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez notre application mobile.
-      </p>
+  <main class="legal-body">
 
-      <h2>2. Données collectées</h2>
+    <div class="legal-section">
+      <h2><span class="section-number">1</span> Introduction</h2>
+      <p>Odyssa s'engage à protéger votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez notre application mobile.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2><span class="section-number">2</span> Données collectées</h2>
       <p>Nous collectons les types de données suivants :</p>
       <ul>
         <li><strong>Informations de compte :</strong> nom, adresse email</li>
@@ -36,8 +51,10 @@
         <li><strong>Photos :</strong> images que vous choisissez de télécharger</li>
         <li><strong>Données de localisation :</strong> uniquement pour la sélection de lieux sur la carte</li>
       </ul>
+    </div>
 
-      <h2>3. Utilisation des données</h2>
+    <div class="legal-section">
+      <h2><span class="section-number">3</span> Utilisation des données</h2>
       <p>Vos données sont utilisées pour :</p>
       <ul>
         <li>Fournir et améliorer nos services</li>
@@ -45,34 +62,38 @@
         <li>Faciliter le partage de voyages avec d'autres utilisateurs</li>
         <li>Vous envoyer des notifications (si activées)</li>
       </ul>
+    </div>
 
-      <h2>4. Stockage et sécurité</h2>
-      <p>
-        Vos données sont stockées de manière sécurisée via Supabase avec chiffrement des données au repos et en transit. Nous utilisons des politiques de sécurité au niveau des lignes (RLS) pour garantir que vous ne pouvez accéder qu'à vos propres données.
-      </p>
+    <div class="legal-section">
+      <h2><span class="section-number">4</span> Stockage et sécurité</h2>
+      <p>Vos données sont stockées de manière sécurisée via Supabase avec chiffrement des données au repos et en transit. Nous utilisons des politiques de sécurité au niveau des lignes (RLS) pour garantir que vous ne pouvez accéder qu'à vos propres données.</p>
+    </div>
 
-      <h2>5. Partage des données</h2>
+    <div class="legal-section">
+      <h2><span class="section-number">5</span> Partage des données</h2>
       <p>Nous ne vendons jamais vos données. Vos informations peuvent être partagées uniquement :</p>
       <ul>
         <li>Avec les utilisateurs que vous invitez sur vos voyages</li>
         <li>Avec nos fournisseurs de services (hébergement, stockage)</li>
         <li>Si requis par la loi</li>
       </ul>
+    </div>
 
-      <h2>6. Services tiers</h2>
+    <div class="legal-section">
+      <h2><span class="section-number">6</span> Services tiers</h2>
       <p>Notre application utilise les services tiers suivants :</p>
       <ul>
         <li><strong>Supabase :</strong> hébergement et base de données sécurisée pour stocker vos données</li>
-        <li><strong>RevenueCat :</strong> gestion des abonnements et achats in-app (traitement sécurisé des paiements)</li>
+        <li><strong>RevenueCat :</strong> gestion des abonnements et achats in-app</li>
         <li><strong>Google Places API :</strong> recherche et suggestions de lieux pour vos voyages</li>
         <li><strong>Google AdMob :</strong> affichage de publicités non personnalisées pour les utilisateurs gratuits</li>
         <li><strong>Expo Notifications :</strong> envoi de notifications push (si activées)</li>
       </ul>
-      <p>
-        Ces services peuvent collecter des données techniques anonymes conformément à leurs propres politiques de confidentialité. Les publicités affichées sont non personnalisées et ne nécessitent pas de suivi publicitaire.
-      </p>
+      <p>Ces services peuvent collecter des données techniques anonymes conformément à leurs propres politiques de confidentialité. Les publicités affichées sont non personnalisées et ne nécessitent pas de suivi publicitaire.</p>
+    </div>
 
-      <h2>7. Vos droits (RGPD)</h2>
+    <div class="legal-section">
+      <h2><span class="section-number">7</span> Vos droits (RGPD)</h2>
       <p>Vous avez le droit de :</p>
       <ul>
         <li>Accéder à vos données personnelles</li>
@@ -81,27 +102,30 @@
         <li>Exporter vos données</li>
         <li>Retirer votre consentement à tout moment</li>
       </ul>
+    </div>
 
-      <h2>8. Conservation des données</h2>
-      <p>
-        Vos données sont conservées tant que votre compte est actif. Après suppression de votre compte, toutes vos données sont définitivement effacées dans un délai de 30 jours.
-      </p>
+    <div class="legal-section">
+      <h2><span class="section-number">8</span> Conservation des données</h2>
+      <p>Vos données sont conservées tant que votre compte est actif. Après suppression de votre compte, toutes vos données sont définitivement effacées dans un délai de 30 jours.</p>
+    </div>
 
-      <h2>9. Contact</h2>
-      <p>
-        Pour toute question concernant cette politique ou vos données personnelles, contactez-nous à :
-        <a href="mailto:contact.odyssa@proton.me">contact.odyssa@proton.me</a>
-      </p>
-    </main>
+    <div class="legal-section">
+      <h2><span class="section-number">9</span> Contact</h2>
+      <p>Pour toute question concernant cette politique ou vos données personnelles, contactez-nous à : <a href="mailto:contact.odyssa@proton.me">contact.odyssa@proton.me</a></p>
+    </div>
 
-    <footer>
+  </main>
+
+  <footer class="legal-footer">
+    <div class="legal-footer-inner">
       <p>&copy; 2026 Odyssa. Tous droits réservés.</p>
-      <p>
-        <a href="index.html">Accueil</a> ·
-        <a href="terms-of-service.html">CGU</a> ·
+      <div class="legal-footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="terms-of-service.html">Conditions d'Utilisation</a>
         <a href="support.html">Support</a>
-      </p>
-    </footer>
-  </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
