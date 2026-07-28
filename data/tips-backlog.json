@@ -143,13 +143,13 @@
       "title": "Check-list avant de quitter la maison pour partir en vacances",
       "tag": "Pratique",
       "angle": "Sécurité, électricité, courrier, animaux, plantes.",
-      "used": false
+      "used": true
     },
     {
       "title": "Première fois en avion : tout comprendre de l'aéroport au décollage",
       "tag": "Pratique",
       "angle": "Enregistrement, sécurité, embarquement, conseils anti-stress.",
-      "used": false
+      "used": true
     },
     {
       "title": "Comment choisir sa destination de vacances",
@@ -179,6 +179,66 @@
       "title": "Organiser un voyage de dernière minute sans stress",
       "tag": "Organisation",
       "angle": "Réservations express, flexibilité et bons plans.",
+      "used": false
+    },
+    {
+      "title": "Comment choisir le meilleure hébergement pour un voyage en groupe",
+      "tag": "Organisation",
+      "angle": "Cet article couvrira les étapes clés pour sélectionner l'hébergement idéal lors d'un voyage en groupe, en tenant compte des budgets, des besoins et des préférences des participants.",
+      "used": false
+    },
+    {
+      "title": "Les 5 erreurs à éviter lors de la planification d'un voyage à l'étranger",
+      "tag": "Pratique",
+      "angle": "Ce guide pratique mettra en lumière les erreurs courantes que les voyageurs commettent lors de la planification de leur voyage et fournira des conseils pour les éviter.",
+      "used": false
+    },
+    {
+      "title": "Pourquoi inclure des activités de plein air dans votre itinéraire de voyage",
+      "tag": "Inspiration",
+      "angle": "Cet article expliquera les bienfaits des activités de plein air pour les voyageurs et proposera des idées pour intégrer ces expériences dans différents types de voyages.",
+      "used": false
+    },
+    {
+      "title": "Comment créer un itinéraire de voyage personnalisé avec Odyssa",
+      "tag": "Organisation",
+      "angle": "Cette étude de cas montrera comment utiliser Odyssa pour concevoir un itinéraire de voyage sur mesure, en fonction des intérêts, du budget et du style de voyage de chacun.",
+      "used": false
+    },
+    {
+      "title": "Les bénéfices du voyage lent pour une expérience plus authentique",
+      "tag": "Éco-voyage",
+      "angle": "Cet article explorera les avantages du voyage lent, notamment en termes d'impact environnemental, d'immersion culturelle et de connexion avec les communautés locales.",
+      "used": false
+    },
+    {
+      "title": "Comment gérer les problèmes de santé mentale lors d'un voyage",
+      "tag": "Bien-être",
+      "angle": "Ce guide sensible et informatif fournira des ressources et des conseils pour gérer les problèmes de santé mentale pendant les voyages, y compris la préparation, la reconnaissance des signes de détresse et les estratégies de coping.",
+      "used": false
+    },
+    {
+      "title": "Les meilleures destinations pour un voyage culinaire en Europe",
+      "tag": "Gastronomie",
+      "angle": "Cet article présentera un aperçu des régions et des villes européennes qui offrent les expériences culinaires les plus uniques et les plus délicieuses, avec des recommandations pour les restaurants, les marchés et les produits locaux.",
+      "used": false
+    },
+    {
+      "title": "Comment voyager avec un animal de compagnie : les règles et les conseils",
+      "tag": "Famille",
+      "angle": "Ce guide pratique détaillera les étapes à suivre pour voyager avec un animal de compagnie, y compris les exigences en matière de documentation, les compagnies aériennes et les hébergements accueillants pour les animaux.",
+      "used": false
+    },
+    {
+      "title": "Les 10 accessedoires de voyage incontournables pour un séjour confortable",
+      "tag": "Astuces",
+      "angle": "Cet article proposera une sélection d'accessoires de voyage intelligents qui peuvent améliorer significativement le confort et la praticité lors d'un voyage, qu'il s'agisse de sacs de voyage, de coussins de voyage ou d'adaptateurs de prise.",
+      "used": false
+    },
+    {
+      "title": "Comment intégrer des activités de volontariat dans votre voyage",
+      "tag": "Inspiration",
+      "angle": "Cet article explorera les opportunités de volontariat à l'étranger, les avantages pour les communautés locales et les voyageurs, et les étapes pour trouver et s'engager dans des projets de volontariat significatifs pendant son voyage.",
       "used": false
     }
   ]

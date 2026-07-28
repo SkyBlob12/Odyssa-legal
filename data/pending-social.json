@@ -1,35 +1,35 @@
 [
   {
     "type": "destination",
-    "slug": "australie",
-    "title": "Australie en été : comment profiter des plages et des festivals",
-    "excerpt": "Plages, festivals et découverte de la faune australienne",
-    "tag": "Australie",
-    "country": "Australie",
-    "url": "https://odyssa-app.com/blog/destinations/australie/",
-    "image": "https://odyssa-app.com/assets/blog/destinations/australie/cover.webp",
-    "date": "2026-07-20"
+    "slug": "bolivie",
+    "title": "Bolivie en 2 semaines : découverte d'une terre de contrastes",
+    "excerpt": "Exploration de la Bolivie, un voyage inoubliable",
+    "tag": "Bolivie",
+    "country": "Bolivie",
+    "url": "https://odyssa-app.com/blog/destinations/bolivie/",
+    "image": "https://odyssa-app.com/assets/blog/destinations/bolivie/cover.webp",
+    "date": "2026-07-27"
   },
   {
     "type": "tip",
-    "slug": "comment-voyager-hors-saison-les-avantages-et-les-precautions",
-    "title": "Comment voyager hors saison : les avantages et les précautions",
-    "excerpt": "Voyager hors saison peut être une excellente option pour économiser de l'argent et éviter les foules",
-    "tag": "Astuces",
+    "slug": "check-list-avant-de-quitter-la-maison-pour-partir-en-vacances",
+    "title": "Check-list avant de quitter la maison pour partir en vacances",
+    "excerpt": "Que faire avant de quitter la maison pour des vacances sans stress ?",
+    "tag": "Pratique",
     "country": "",
-    "url": "https://odyssa-app.com/blog/comment-voyager-hors-saison-les-avantages-et-les-precautions/",
-    "image": "https://odyssa-app.com/assets/blog/tips/comment-voyager-hors-saison-les-avantages-et-les-precautions/cover.webp",
-    "date": "2026-07-20"
+    "url": "https://odyssa-app.com/blog/check-list-avant-de-quitter-la-maison-pour-partir-en-vacances/",
+    "image": "https://odyssa-app.com/assets/blog/tips/check-list-avant-de-quitter-la-maison-pour-partir-en-vacances/cover.webp",
+    "date": "2026-07-27"
   },
   {
     "type": "tip",
-    "slug": "comment-occuper-les-enfants-pendant-un-long-trajet-en-voiture-ou-en-av",
-    "title": "Comment occuper les enfants pendant un long trajet en voiture ou en avion ?",
-    "excerpt": "Les enfants s'ennuient en voyage ? Découvrez nos conseils pour les occuper",
-    "tag": "Famille",
+    "slug": "premiere-fois-en-avion-le-guide-complet-de-l-aeroport-au-decollage",
+    "title": "Première fois en avion : le guide complet de l'aéroport au décollage",
+    "excerpt": "Tout savoir pour votre premier vol, conseils anti-stress et préparatifs",
+    "tag": "Pratique",
     "country": "",
-    "url": "https://odyssa-app.com/blog/comment-occuper-les-enfants-pendant-un-long-trajet-en-voiture-ou-en-av/",
-    "image": "https://odyssa-app.com/assets/blog/tips/comment-occuper-les-enfants-pendant-un-long-trajet-en-voiture-ou-en-av/cover.webp",
-    "date": "2026-07-20"
+    "url": "https://odyssa-app.com/blog/premiere-fois-en-avion-le-guide-complet-de-l-aeroport-au-decollage/",
+    "image": "https://odyssa-app.com/assets/blog/tips/premiere-fois-en-avion-le-guide-complet-de-l-aeroport-au-decollage/cover.webp",
+    "date": "2026-07-27"
   }
 ]

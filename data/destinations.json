@@ -1,5 +1,15 @@
 [
   {
+    "slug": "bolivie",
+    "title": "Bolivie en 2 semaines : découverte d'une terre de contrastes",
+    "country": "Bolivie",
+    "tag": "Bolivie",
+    "excerpt": "Exploration de la Bolivie, un voyage inoubliable",
+    "readingTime": "4 min de lecture",
+    "cover": "assets/blog/destinations/bolivie/cover.webp",
+    "date": "2026-07-27"
+  },
+  {
     "slug": "australie",
     "title": "Australie en été : comment profiter des plages et des festivals",
     "country": "Australie",
