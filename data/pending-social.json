@@ -1,35 +1,35 @@
 [
   {
     "type": "destination",
-    "slug": "bolivie",
-    "title": "Bolivie en 2 semaines : découverte d'une terre de contrastes",
-    "excerpt": "Exploration de la Bolivie, un voyage inoubliable",
-    "tag": "Bolivie",
-    "country": "Bolivie",
-    "url": "https://odyssa-app.com/blog/destinations/bolivie/",
-    "image": "https://odyssa-app.com/assets/blog/destinations/bolivie/cover.webp",
-    "date": "2026-07-27"
+    "slug": "colombie",
+    "title": "Colombie en 2 semaines : que voir et que faire ?",
+    "excerpt": "Explorez la Colombie, un pays en effervescence",
+    "tag": "Pays",
+    "country": "Colombie",
+    "url": "https://odyssa-app.com/blog/destinations/colombie/",
+    "image": "https://odyssa-app.com/assets/blog/destinations/colombie/cover.webp",
+    "date": "2026-08-03"
   },
   {
     "type": "tip",
-    "slug": "check-list-avant-de-quitter-la-maison-pour-partir-en-vacances",
-    "title": "Check-list avant de quitter la maison pour partir en vacances",
-    "excerpt": "Que faire avant de quitter la maison pour des vacances sans stress ?",
-    "tag": "Pratique",
+    "slug": "comment-choisir-sa-destination-de-vacances-parfaite",
+    "title": "Comment choisir sa destination de vacances parfaite ?",
+    "excerpt": "Trouvez votre destination de rêve avec ces conseils pratiques et concis.",
+    "tag": "Inspiration",
     "country": "",
-    "url": "https://odyssa-app.com/blog/check-list-avant-de-quitter-la-maison-pour-partir-en-vacances/",
-    "image": "https://odyssa-app.com/assets/blog/tips/check-list-avant-de-quitter-la-maison-pour-partir-en-vacances/cover.webp",
-    "date": "2026-07-27"
+    "url": "https://odyssa-app.com/blog/comment-choisir-sa-destination-de-vacances-parfaite/",
+    "image": "https://odyssa-app.com/assets/blog/tips/comment-choisir-sa-destination-de-vacances-parfaite/cover.webp",
+    "date": "2026-08-03"
   },
   {
     "type": "tip",
-    "slug": "premiere-fois-en-avion-le-guide-complet-de-l-aeroport-au-decollage",
-    "title": "Première fois en avion : le guide complet de l'aéroport au décollage",
-    "excerpt": "Tout savoir pour votre premier vol, conseils anti-stress et préparatifs",
+    "slug": "comment-voyager-avec-un-animal-de-compagnie-le-guide-complet",
+    "title": "Comment voyager avec un animal de compagnie : le guide complet",
+    "excerpt": "Découvrez les étapes clés pour un voyage réussi avec votre animal de compagnie",
     "tag": "Pratique",
     "country": "",
-    "url": "https://odyssa-app.com/blog/premiere-fois-en-avion-le-guide-complet-de-l-aeroport-au-decollage/",
-    "image": "https://odyssa-app.com/assets/blog/tips/premiere-fois-en-avion-le-guide-complet-de-l-aeroport-au-decollage/cover.webp",
-    "date": "2026-07-27"
+    "url": "https://odyssa-app.com/blog/comment-voyager-avec-un-animal-de-compagnie-le-guide-complet/",
+    "image": "https://odyssa-app.com/assets/blog/tips/comment-voyager-avec-un-animal-de-compagnie-le-guide-complet/cover.webp",
+    "date": "2026-08-03"
   }
 ]
