@@ -155,13 +155,13 @@
       "title": "Comment choisir sa destination de vacances",
       "tag": "Inspiration",
       "angle": "Critères selon budget, saison, envies et durée.",
-      "used": false
+      "used": true
     },
     {
       "title": "Voyager avec un animal de compagnie",
       "tag": "Pratique",
       "angle": "Transport, papiers, destinations et hébergements pet-friendly.",
-      "used": false
+      "used": true
     },
     {
       "title": "Les indispensables d'un week-end à la mer",

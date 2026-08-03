@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://odyssa-app.com/blog/destinations/colombie/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://odyssa-app.com/blog/destinations/bolivie/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -72,6 +77,16 @@
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/destinations/maroc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/comment-voyager-avec-un-animal-de-compagnie-le-guide-complet/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/comment-choisir-sa-destination-de-vacances-parfaite/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

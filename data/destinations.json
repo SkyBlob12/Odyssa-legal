@@ -1,5 +1,15 @@
 [
   {
+    "slug": "colombie",
+    "title": "Colombie en 2 semaines : que voir et que faire ?",
+    "country": "Colombie",
+    "tag": "Pays",
+    "excerpt": "Explorez la Colombie, un pays en effervescence",
+    "readingTime": "4 min de lecture",
+    "cover": "assets/blog/destinations/colombie/cover.webp",
+    "date": "2026-08-03"
+  },
+  {
     "slug": "bolivie",
     "title": "Bolivie en 2 semaines : découverte d'une terre de contrastes",
     "country": "Bolivie",
