@@ -1,35 +1,35 @@
 [
   {
     "type": "destination",
-    "slug": "colombie",
-    "title": "Colombie en 2 semaines : que voir et que faire ?",
-    "excerpt": "Explorez la Colombie, un pays en effervescence",
-    "tag": "Pays",
-    "country": "Colombie",
-    "url": "https://odyssa-app.com/blog/destinations/colombie/",
-    "image": "https://odyssa-app.com/assets/blog/destinations/colombie/cover.webp",
-    "date": "2026-08-03"
+    "slug": "vietnam",
+    "title": "Vietnam en Septembre : que faire et que voir ?",
+    "excerpt": "Explorez le Vietnam pendant la saison idéale",
+    "tag": "Vietnam",
+    "country": "Vietnam",
+    "url": "https://odyssa-app.com/blog/destinations/vietnam/",
+    "image": "https://odyssa-app.com/assets/blog/destinations/vietnam/cover.webp",
+    "date": "2026-08-10"
   },
   {
     "type": "tip",
-    "slug": "comment-choisir-sa-destination-de-vacances-parfaite",
-    "title": "Comment choisir sa destination de vacances parfaite ?",
-    "excerpt": "Trouvez votre destination de rêve avec ces conseils pratiques et concis.",
+    "slug": "le-guide-complet-pour-un-week-end-a-la-mer",
+    "title": "Le guide complet pour un week-end à la mer",
+    "excerpt": "Découvrez comment préparer un week-end à la mer réussi",
     "tag": "Inspiration",
     "country": "",
-    "url": "https://odyssa-app.com/blog/comment-choisir-sa-destination-de-vacances-parfaite/",
-    "image": "https://odyssa-app.com/assets/blog/tips/comment-choisir-sa-destination-de-vacances-parfaite/cover.webp",
-    "date": "2026-08-03"
+    "url": "https://odyssa-app.com/blog/le-guide-complet-pour-un-week-end-a-la-mer/",
+    "image": "https://odyssa-app.com/assets/blog/tips/le-guide-complet-pour-un-week-end-a-la-mer/cover.webp",
+    "date": "2026-08-10"
   },
   {
     "type": "tip",
-    "slug": "comment-voyager-avec-un-animal-de-compagnie-le-guide-complet",
-    "title": "Comment voyager avec un animal de compagnie : le guide complet",
-    "excerpt": "Découvrez les étapes clés pour un voyage réussi avec votre animal de compagnie",
-    "tag": "Pratique",
+    "slug": "comment-bien-dormir-en-voyage-10-astuces-anti-fatigue",
+    "title": "Comment bien dormir en voyage : 10 astuces anti-fatigue",
+    "excerpt": "Voyager sans fatigue, c'est possible",
+    "tag": "Bien-être",
     "country": "",
-    "url": "https://odyssa-app.com/blog/comment-voyager-avec-un-animal-de-compagnie-le-guide-complet/",
-    "image": "https://odyssa-app.com/assets/blog/tips/comment-voyager-avec-un-animal-de-compagnie-le-guide-complet/cover.webp",
-    "date": "2026-08-03"
+    "url": "https://odyssa-app.com/blog/comment-bien-dormir-en-voyage-10-astuces-anti-fatigue/",
+    "image": "https://odyssa-app.com/assets/blog/tips/comment-bien-dormir-en-voyage-10-astuces-anti-fatigue/cover.webp",
+    "date": "2026-08-10"
   }
 ]

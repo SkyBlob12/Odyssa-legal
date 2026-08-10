@@ -167,13 +167,13 @@
       "title": "Les indispensables d'un week-end à la mer",
       "tag": "Inspiration",
       "angle": "Préparation, bagages et activités.",
-      "used": false
+      "used": true
     },
     {
       "title": "Comment bien dormir en voyage (avion, train, hôtel)",
       "tag": "Bien-être",
       "angle": "Accessoires, routine et astuces anti-fatigue.",
-      "used": false
+      "used": true
     },
     {
       "title": "Organiser un voyage de dernière minute sans stress",
