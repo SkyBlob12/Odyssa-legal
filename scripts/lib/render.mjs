@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { escapeHtml, fillTemplate, readText, writeText, ROOT, SITE_URL } from './util.mjs';
+import { escapeHtml, fillTemplate, readText, writeText, sizeAttrs, ROOT, SITE_URL } from './util.mjs';
 
 /** Markdown minimal inline : **gras** et *italique*, sur texte déjà échappé. */
 function inline(text) {
@@ -33,7 +33,8 @@ function creditLine(a = {}) {
 /** Figure de couverture d'un article conseil (vide si pas de photo). */
 export function tipCoverFigure(photo, prefix, alt) {
   if (!photo?.cover) return '';
-  return `      <figure class="article-cover"><img src="${prefix}${photo.cover}" alt="${escapeHtml(alt)}" loading="lazy"><figcaption>${creditLine(photo.attribution)}</figcaption></figure>`;
+  // Couverture = candidat LCP : chargement prioritaire, jamais différé.
+  return `      <figure class="article-cover"><img src="${prefix}${photo.cover}" alt="${escapeHtml(alt)}"${sizeAttrs(photo.cover)} fetchpriority="high" decoding="async"><figcaption>${creditLine(photo.attribution)}</figcaption></figure>`;
 }
 
 function galleryBlock(photos, prefix, alt) {
@@ -41,7 +42,7 @@ function galleryBlock(photos, prefix, alt) {
   const fig = photos.gallery
     .map((src, i) => {
       const a = photos.attributions[i + 1] || photos.attributions[0] || {};
-      return `          <figure class="dest-photo"><img src="${prefix}${src}" alt="${escapeHtml(alt)} ${i + 1}" loading="lazy"><figcaption>${creditLine(a)}</figcaption></figure>`;
+      return `          <figure class="dest-photo"><img src="${prefix}${src}" alt="${escapeHtml(alt)} ${i + 1}"${sizeAttrs(src)} loading="lazy" decoding="async"><figcaption>${creditLine(a)}</figcaption></figure>`;
     })
     .join('\n');
   return `        <div class="dest-gallery">\n${fig}\n        </div>`;
@@ -50,7 +51,7 @@ function galleryBlock(photos, prefix, alt) {
 function fullBlock(photos, prefix, alt) {
   if (!photos.full) return '';
   const a = photos.attributions[3] || photos.attributions[0] || {};
-  return `        <figure class="dest-full"><img src="${prefix}${photos.full}" alt="${escapeHtml(alt)}" loading="lazy"></figure>\n        <p class="dest-cap">${creditLine(a)}</p>`;
+  return `        <figure class="dest-full"><img src="${prefix}${photos.full}" alt="${escapeHtml(alt)}"${sizeAttrs(photos.full)} loading="lazy" decoding="async"></figure>\n        <p class="dest-cap">${creditLine(a)}</p>`;
 }
 
 function faqSchema(faq) {
@@ -129,7 +130,7 @@ export async function renderDestination({ content, photos, palette, slug, date, 
   const ogImage = photos.cover ? `${SITE_URL}/${photos.cover}` : `${SITE_URL}/assets/miniature-odyssa.png`;
 
   const cover = photos.cover
-    ? `<div class="dest-cover"><img src="${prefix}${photos.cover}" alt="${escapeHtml(content.titleShort)}"></div>`
+    ? `<div class="dest-cover"><img src="${prefix}${photos.cover}" alt="${escapeHtml(content.titleShort)}"${sizeAttrs(photos.cover)} fetchpriority="high" decoding="async"></div>`
     : '<div class="dest-cover"></div>';
 
   const blogPrefix = '../../'; // depuis /blog/destinations/<slug>/ vers /blog/

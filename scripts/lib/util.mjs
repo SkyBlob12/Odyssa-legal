@@ -1,4 +1,5 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
@@ -60,6 +61,44 @@ export async function readText(path) {
 export async function writeText(path, content) {
   await mkdir(dirname(path), { recursive: true });
   await writeFile(path, content, 'utf8');
+}
+
+/**
+ * Dimensions d'un WebP, lues dans l'en-tête du fichier (sync, sans décodage).
+ * Sert à écrire width/height sur les <img> : sans eux le navigateur ne réserve
+ * pas la place de l'image et la page saute au chargement (mauvais score CLS).
+ * @returns {{width:number,height:number}|null} null si le fichier est illisible.
+ */
+export function webpSize(absPath) {
+  let buf;
+  try {
+    buf = readFileSync(absPath);
+  } catch {
+    return null;
+  }
+  if (buf.length < 30 || buf.toString('ascii', 0, 4) !== 'RIFF') return null;
+
+  switch (buf.toString('ascii', 12, 16)) {
+    case 'VP8 ': // lossy
+      return { width: buf.readUInt16LE(26) & 0x3fff, height: buf.readUInt16LE(28) & 0x3fff };
+    case 'VP8L': { // lossless : 14 bits par dimension, empaquetés
+      const bits = buf.readUInt32LE(21);
+      return { width: (bits & 0x3fff) + 1, height: ((bits >> 14) & 0x3fff) + 1 };
+    }
+    case 'VP8X': // étendu : 24 bits little-endian par dimension
+      return {
+        width: buf.readUIntLE(24, 3) + 1,
+        height: buf.readUIntLE(27, 3) + 1,
+      };
+    default:
+      return null;
+  }
+}
+
+/** Attributs `width="…" height="…"` d'une image, ou '' si dimensions inconnues. */
+export function sizeAttrs(relPath) {
+  const d = webpSize(resolve(ROOT, relPath));
+  return d ? ` width="${d.width}" height="${d.height}"` : '';
 }
 
 /** Temps de lecture estimé (≈200 mots/min). */

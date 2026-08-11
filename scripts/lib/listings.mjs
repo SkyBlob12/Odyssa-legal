@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { escapeHtml, readText, writeText, readJson, ROOT, SITE_URL } from './util.mjs';
+import { escapeHtml, readText, writeText, readJson, sizeAttrs, ROOT, SITE_URL } from './util.mjs';
 
 function replaceBetween(content, startMarker, endMarker, inner) {
   const start = content.indexOf(startMarker);
@@ -12,7 +12,7 @@ function replaceBetween(content, startMarker, endMarker, inner) {
 
 function destCard(d, { hrefBase, photoPrefix }) {
   const photo = d.cover
-    ? `<div class="blog-card-photo"><img src="${photoPrefix}${escapeHtml(d.cover)}" alt="${escapeHtml(d.title)}" loading="lazy"></div>`
+    ? `<div class="blog-card-photo"><img src="${photoPrefix}${escapeHtml(d.cover)}" alt="${escapeHtml(d.title)}"${sizeAttrs(d.cover)} loading="lazy" decoding="async"></div>`
     : `<div class="blog-card-photo">${escapeHtml(d.tag || d.title)}</div>`;
   return `        <a href="${hrefBase}${d.slug}/" class="blog-card">
           ${photo}
@@ -30,7 +30,7 @@ function destCard(d, { hrefBase, photoPrefix }) {
 
 function tipCard(t, { hrefBase, photoPrefix }) {
   const photo = t.cover
-    ? `<div class="blog-card-photo"><img src="${photoPrefix}${escapeHtml(t.cover)}" alt="${escapeHtml(t.title)}" loading="lazy"></div>`
+    ? `<div class="blog-card-photo"><img src="${photoPrefix}${escapeHtml(t.cover)}" alt="${escapeHtml(t.title)}"${sizeAttrs(t.cover)} loading="lazy" decoding="async"></div>`
     : `<div class="blog-card-photo">${escapeHtml(t.tag)}</div>`;
   return `        <a href="${hrefBase}${t.slug}/" class="blog-card">
           ${photo}
@@ -48,7 +48,7 @@ function tipCard(t, { hrefBase, photoPrefix }) {
 
 function homeCard(a) {
   const photo = a.cover
-    ? `<img src="${escapeHtml(a.cover)}" alt="${escapeHtml(a.title)}" loading="lazy">`
+    ? `<img src="${escapeHtml(a.cover)}" alt="${escapeHtml(a.title)}"${sizeAttrs(a.cover)} loading="lazy" decoding="async">`
     : '';
   return `        <a href="${a.href}" class="home-blog-card">
           <div class="home-blog-card-photo">${photo}
@@ -168,16 +168,27 @@ export async function rebuildSitemap() {
   const destinations = await readJson(join(ROOT, 'data/destinations.json'));
   const tips = await readJson(join(ROOT, 'data/tips.json'));
 
-  const url = (loc, changefreq, priority) =>
-    `  <url>\n    <loc>${loc}</loc>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+  // <lastmod> n'est utile que s'il est honnête : on ne le met que là où on
+  // connaît une vraie date de publication. Un lastmod toujours à « aujourd'hui »
+  // est ignoré par Google.
+  const url = (loc, changefreq, priority, lastmod) =>
+    `  <url>\n    <loc>${loc}</loc>\n` +
+    (lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : '') +
+    `    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+
+  const latest = (list) =>
+    list.map((i) => i.date).filter(Boolean).sort().pop();
+  const latestDest = latest(destinations);
+  const latestTip = latest(tips);
+  const latestAny = [latestDest, latestTip].filter(Boolean).sort().pop();
 
   const entries = [
-    url(`${SITE_URL}/`, 'weekly', '1.0'),
-    url(`${SITE_URL}/blog/`, 'weekly', '0.8'),
-    url(`${SITE_URL}/blog/destinations/`, 'weekly', '0.8'),
-    url(`${SITE_URL}/blog/conseils/`, 'weekly', '0.8'),
-    ...destinations.map((d) => url(`${SITE_URL}/blog/destinations/${d.slug}/`, 'monthly', '0.7')),
-    ...tips.map((t) => url(`${SITE_URL}/blog/${t.slug}/`, 'monthly', '0.7')),
+    url(`${SITE_URL}/`, 'weekly', '1.0', latestAny),
+    url(`${SITE_URL}/blog/`, 'weekly', '0.8', latestAny),
+    url(`${SITE_URL}/blog/destinations/`, 'weekly', '0.8', latestDest),
+    url(`${SITE_URL}/blog/conseils/`, 'weekly', '0.8', latestTip),
+    ...destinations.map((d) => url(`${SITE_URL}/blog/destinations/${d.slug}/`, 'monthly', '0.7', d.date)),
+    ...tips.map((t) => url(`${SITE_URL}/blog/${t.slug}/`, 'monthly', '0.7', t.date)),
     url(`${SITE_URL}/about/`, 'monthly', '0.6'),
     url(`${SITE_URL}/support/`, 'monthly', '0.5'),
     url(`${SITE_URL}/privacy-policy/`, 'yearly', '0.3'),
