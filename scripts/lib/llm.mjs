@@ -106,11 +106,11 @@ ${month ? `MOIS DE RÉFÉRENCE : ${month}. Ancre concrètement le guide sur cett
 
 Structure attendue : un objet JSON avec ces clés :
 - titleShort : le nom court de la destination (ex. "Lisbonne").
-- title : un titre SEO longue traîne (55–65 caractères max) incluant le nom de la destination et un angle précis : durée, question ou angle pratique. Ex. : "Lisbonne en 5 jours : que voir et que faire ?", "Japon : 2 semaines entre Tokyo, Kyoto et Osaka", "Pourquoi le Maroc est parfait pour un premier voyage solo ?". Privilégie les formulations interrogatives, les durées chiffrées ou les promesses concrètes — ce sont les requêtes que les voyageurs tapent réellement sur Google.
+- title : un titre SEO longue traîne (50 à 60 caractères — au-delà Google tronque le titre dans ses résultats, ne dépasse jamais 60) incluant le nom de la destination et un angle précis : durée, question ou angle pratique. Ex. : "Lisbonne en 5 jours : que voir et que faire ?", "Japon : 2 semaines entre Tokyo, Kyoto et Osaka", "Pourquoi le Maroc est parfait pour un premier voyage solo ?". Privilégie les formulations interrogatives, les durées chiffrées ou les promesses concrètes — ce sont les requêtes que les voyageurs tapent réellement sur Google.
 - subtitle : sous-titre court et évocateur.
 - eyebrow : "Pays · Région" (ex. "Portugal · Europe du Sud").
 - countryCode : code ISO-2 du pays (ex. "PT").
-- description : meta description SEO, 150 caractères max.
+- description : meta description SEO de 140 à 155 caractères — c'est la place que Google affiche : en dessous de 120 tu gaspilles de la visibilité, au-dessus de 158 la phrase est coupée. Termine par un bénéfice concret pour donner envie de cliquer.
 - excerpt : accroche pour la carte du blog, ~140 caractères.
 - intro : paragraphe d'introduction immersif (3-4 phrases).
 - facts : objet { period (meilleure période), budget (par jour, ex "60–90 €"), duration (durée idéale), currency (monnaie) }.
@@ -131,9 +131,9 @@ Rédige un article de conseils voyage (800 à 1100 mots) sur le sujet : "${title
 Catégorie : ${tag}. ${angle ? `Angle : ${angle}` : ''}
 
 Structure attendue : un objet JSON avec ces clés :
-- title : titre SEO longue traîne (55–65 caractères max) répondant à une requête réelle. Privilégie : formulation interrogative ("Comment...", "Pourquoi..."), liste chiffrée ("10 astuces...", "5 étapes..."), ou promesse concrète ("Le guide complet pour...", "Tout ce qu'il faut savoir sur..."). Ex. : "Comment voyager pas cher en Europe : 12 astuces concrètes", "Que mettre dans son sac à dos : checklist complète".
+- title : titre SEO longue traîne (50 à 60 caractères — au-delà Google tronque le titre dans ses résultats, ne dépasse jamais 60) répondant à une requête réelle. Privilégie : formulation interrogative ("Comment...", "Pourquoi..."), liste chiffrée ("10 astuces...", "5 étapes..."), ou promesse concrète ("Le guide complet pour...", "Tout ce qu'il faut savoir sur..."). Ex. : "Comment voyager pas cher en Europe : 12 astuces concrètes", "Que mettre dans son sac à dos : checklist complète".
 - titleShort : identique ou très proche du title.
-- description : meta description SEO, 150 caractères max.
+- description : meta description SEO de 140 à 155 caractères — c'est la place que Google affiche : en dessous de 120 tu gaspilles de la visibilité, au-dessus de 158 la phrase est coupée. Termine par un bénéfice concret pour donner envie de cliquer.
 - excerpt : accroche pour la carte du blog, ~140 caractères.
 - photoQuery : 2 à 4 mots-clés EN ANGLAIS pour trouver une photo de couverture pertinente et concrète sur Unsplash (ex. "packing suitcase travel", "airport departure board", "budget travel backpacker"). Privilégie un sujet visuel et photographiable, pas un concept abstrait.
 - intro : introduction engageante (2-3 phrases).
@@ -166,7 +166,7 @@ Propose ${count} nouveaux sujets d'articles de conseils voyage pour le blog Odys
 ${existingTitles.map((t) => `- ${t}`).join('\n')}
 
 Réponds avec un objet JSON de forme : {"topics": [{"title": ..., "tag": ..., "angle": ...}, ...]}
-- title : titre SEO longue traîne (55–65 caractères max), formulé comme une requête réelle : question ("Comment...", "Pourquoi..."), liste chiffrée, ou promesse concrète ("Le guide complet pour..."). Ex. : "Comment voyager léger en avion : la méthode des bagages cabine".
+- title : titre SEO longue traîne (50 à 60 caractères — au-delà Google tronque le titre dans ses résultats, ne dépasse jamais 60), formulé comme une requête réelle : question ("Comment...", "Pourquoi..."), liste chiffrée, ou promesse concrète ("Le guide complet pour..."). Ex. : "Comment voyager léger en avion : la méthode des bagages cabine".
 - tag : catégorie courte (Organisation, Budget, Astuces, Famille, Pratique, Inspiration, Bien-être, Gastronomie, Éco-voyage).
 - angle : 1 phrase sur ce que l'article couvrira.
 `;

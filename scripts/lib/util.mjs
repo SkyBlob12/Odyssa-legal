@@ -101,6 +101,25 @@ export function sizeAttrs(relPath) {
   return d ? ` width="${d.width}" height="${d.height}"` : '';
 }
 
+/**
+ * Titre de la balise <title>, sous le budget d'affichage de Google.
+ *
+ * Google tronque autour de 60 caractères : au-delà, la fin du titre est
+ * remplacée par « … » et n'est plus lue. La marque n'est donc ajoutée que si
+ * elle tient — mieux vaut un titre complet sans marque qu'un titre coupé.
+ *
+ * @param {string} base   titre de l'article
+ * @param {object} opts   limit (60), brand (' | Odyssa')
+ */
+export function seoTitle(base, { limit = 60, brand = ' | Odyssa' } = {}) {
+  const title = String(base || '').trim();
+  if (title.length + brand.length <= limit) return title + brand;
+  if (title.length > limit) {
+    log(`⚠ Titre trop long pour Google (${title.length} > ${limit}) : « ${title} »`);
+  }
+  return title;
+}
+
 /** Temps de lecture estimé (≈200 mots/min). */
 export function readingTime(wordCount) {
   return `${Math.max(2, Math.round(wordCount / 200))} min de lecture`;

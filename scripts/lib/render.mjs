@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { escapeHtml, fillTemplate, readText, writeText, sizeAttrs, ROOT, SITE_URL } from './util.mjs';
+import { escapeHtml, fillTemplate, readText, writeText, sizeAttrs, seoTitle, ROOT, SITE_URL } from './util.mjs';
 
 /** Markdown minimal inline : **gras** et *italique*, sur texte déjà échappé. */
 function inline(text) {
@@ -141,6 +141,7 @@ export async function renderDestination({ content, photos, palette, slug, date, 
   const html = fillTemplate(tpl, {
     SLUG: slug,
     TITLE: escapeHtml(content.title),
+    SEO_TITLE: escapeHtml(seoTitle(content.title)),
     TITLE_SHORT: escapeHtml(content.titleShort),
     SUBTITLE: escapeHtml(content.subtitle),
     EYEBROW: escapeHtml(content.eyebrow),
@@ -204,6 +205,7 @@ export async function renderTip({ content, photo, tag, tagClass, slug, date, rel
   const html = fillTemplate(tpl, {
     SLUG: slug,
     TITLE: escapeHtml(content.title),
+    SEO_TITLE: escapeHtml(seoTitle(content.title)),
     TITLE_SHORT: escapeHtml(content.titleShort || content.title),
     DESCRIPTION: escapeHtml(content.description),
     OG_IMAGE: ogImage,
