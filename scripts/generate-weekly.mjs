@@ -10,7 +10,7 @@
  * Usage :
  *   node scripts/generate-weekly.mjs            # run complet
  *   node scripts/generate-weekly.mjs --dry-run  # contenu factice, sans API
- *   node scripts/generate-weekly.mjs --listings-only  # régénère listings + sitemap
+ *   node scripts/generate-weekly.mjs --listings-only  # régénère listings + maillage + sitemap
  */
 import { join } from 'node:path';
 import {
@@ -21,7 +21,7 @@ import { fetchDestinationPhotos, generatePlaceholderPhotos, fetchTipPhoto, gener
 import { generateDestination, generateTip, proposeTopics } from './lib/llm.mjs';
 import { fetchDestinationsToPublish, markStatus } from './lib/notion.mjs';
 import { renderDestination, renderTip } from './lib/render.mjs';
-import { rebuildListings, rebuildSitemap } from './lib/listings.mjs';
+import { rebuildListings, rebuildRelated, rebuildSitemap } from './lib/listings.mjs';
 
 const argv = process.argv.slice(2);
 const DRY = argv.includes('--dry-run');
@@ -174,8 +174,9 @@ async function main() {
 
   if (LISTINGS_ONLY) {
     await rebuildListings();
+    const rel = await rebuildRelated();
     await rebuildSitemap();
-    log('Listings + sitemap régénérés.');
+    log(`Listings + maillage (${rel.updated} articles, ${rel.min}-${rel.max} liens entrants) + sitemap régénérés.`);
     return;
   }
 
@@ -240,8 +241,12 @@ async function main() {
   await writeJson(join(ROOT, 'data/pending-social.json'), pendingSocial);
   log(`File sociale écrite : ${pendingSocial.length} article(s).`);
 
-  // 4) Listings + sitemap
+  // 4) Listings + maillage interne + sitemap
   await rebuildListings();
+  // Après l'ajout des nouveaux articles : les anciens peuvent maintenant
+  // pointer vers eux, donc on recalcule le maillage de tout le blog.
+  const rel = await rebuildRelated();
+  log(`Maillage interne recalculé : ${rel.updated} articles, ${rel.min}-${rel.max} liens entrants.`);
   await rebuildSitemap();
 
   // 5) Marque la page Notion "En PR"

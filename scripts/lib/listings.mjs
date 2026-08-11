@@ -1,5 +1,6 @@
 import { join } from 'node:path';
 import { escapeHtml, readText, writeText, readJson, sizeAttrs, ROOT, SITE_URL } from './util.mjs';
+import { buildRelatedMap, inboundStats, RELATED_COUNT } from './related.mjs';
 
 function replaceBetween(content, startMarker, endMarker, inner) {
   const start = content.indexOf(startMarker);
@@ -64,6 +65,9 @@ function homeCard(a) {
 
 const byDateDesc = (a, b) => String(b.date).localeCompare(String(a.date));
 
+/** Nombre de cartes par section sur blog/index.html (les listings restent complets). */
+const BLOG_INDEX_CARDS = 12;
+
 /**
  * Arrondit un compteur vers le bas pour l'afficher en « + de N » : la home n'a
  * plus besoin d'être mise à jour à chaque publication.
@@ -80,20 +84,23 @@ export async function rebuildListings() {
   const destinations = (await readJson(join(ROOT, 'data/destinations.json'))).sort(byDateDesc);
   const tips = (await readJson(join(ROOT, 'data/tips.json'))).sort(byDateDesc);
 
-  // --- blog/index.html : section Destinations (limitée à 6) + section Conseils (limitée à 6) ---
+  // --- blog/index.html : aperçu des deux sections ---
+  // 12 cartes par section plutôt que 6 : la moitié du catalogue passe ainsi à
+  // deux clics de l'accueil au lieu de trois, ce qui aide Google à explorer les
+  // articles qui ne sont sinon atteignables que depuis leur listing complet.
   const blogIndexPath = join(ROOT, 'blog/index.html');
   let blogIndex = await readText(blogIndexPath);
   blogIndex = replaceBetween(
     blogIndex,
     '<!-- AUTO:DEST_CARDS:START -->',
     '<!-- AUTO:DEST_CARDS:END -->',
-    destinations.slice(0, 6).map((d) => destCard(d, { hrefBase: 'destinations/', photoPrefix: '../' })).join('\n\n')
+    destinations.slice(0, BLOG_INDEX_CARDS).map((d) => destCard(d, { hrefBase: 'destinations/', photoPrefix: '../' })).join('\n\n')
   );
   blogIndex = replaceBetween(
     blogIndex,
     '<!-- AUTO:TIPS_CARDS:START -->',
     '<!-- AUTO:TIPS_CARDS:END -->',
-    tips.slice(0, 6).map((t) => tipCard(t, { hrefBase: '', photoPrefix: '../' })).join('\n\n')
+    tips.slice(0, BLOG_INDEX_CARDS).map((t) => tipCard(t, { hrefBase: '', photoPrefix: '../' })).join('\n\n')
   );
   await writeText(blogIndexPath, blogIndex);
 
@@ -161,6 +168,66 @@ export async function rebuildListings() {
   home = replaceBetween(home, '<!-- AUTO:HOME_BLOG_STATS:START -->', '<!-- AUTO:HOME_BLOG_STATS:END -->', stats);
 
   await writeText(homePath, home);
+}
+
+/**
+ * Régénère le bloc « À lire aussi » de TOUS les articles publiés.
+ *
+ * C'est un rebuild global et pas seulement une étape à la génération : quand un
+ * article paraît, les anciens doivent pouvoir pointer vers lui. Sans ça le
+ * maillage ne se densifie jamais et les articles les plus anciens restent
+ * isolés.
+ */
+export async function rebuildRelated({ count = RELATED_COUNT, dry = false } = {}) {
+  const destinations = await readJson(join(ROOT, 'data/destinations.json'));
+  const tips = await readJson(join(ROOT, 'data/tips.json'));
+  const relatedMap = buildRelatedMap({ destinations, tips, count });
+  const skipped = [];
+
+  // Chemin relatif depuis l'article courant vers la cible.
+  const hrefFrom = (fromType, target) =>
+    fromType === 'destination'
+      ? (target.type === 'destination' ? `../${target.slug}/` : `../../${target.slug}/`)
+      : (target.type === 'destination' ? `../destinations/${target.slug}/` : `../${target.slug}/`);
+
+  let updated = 0;
+  for (const [key, items] of relatedMap) {
+    const [type, slug] = [key.slice(0, key.indexOf(':')), key.slice(key.indexOf(':') + 1)];
+    const path = type === 'destination'
+      ? join(ROOT, 'blog/destinations', slug, 'index.html')
+      : join(ROOT, 'blog', slug, 'index.html');
+
+    let html;
+    try {
+      html = await readText(path);
+    } catch {
+      skipped.push(`${key} (fichier absent)`); // registre en avance sur les fichiers
+      continue;
+    }
+
+    const links = items
+      .map((r) => `          <a href="${hrefFrom(type, r)}">${escapeHtml(r.title)} <span class="arrow">→</span></a>`)
+      .join('\n');
+    if (!links) continue;
+
+    const blockClass = type === 'destination' ? 'dest-related' : 'article-related';
+    const re = new RegExp(
+      `(<div class="${blockClass}">\\s*<p class="rk">[^<]*</p>)[\\s\\S]*?(\\n\\s*</div>)`
+    );
+    if (!re.test(html)) {
+      skipped.push(`${key} (bloc « À lire aussi » introuvable)`);
+      continue;
+    }
+
+    const next = html.replace(re, (_m, head, tail) => `${head}\n${links}${tail}`);
+    if (next !== html) {
+      if (!dry) await writeText(path, next);
+      updated++;
+    }
+  }
+
+  const { min, max } = inboundStats(relatedMap);
+  return { updated, total: relatedMap.size, min, max, skipped };
 }
 
 /** Régénère sitemap.xml à partir des pages statiques + registres. */

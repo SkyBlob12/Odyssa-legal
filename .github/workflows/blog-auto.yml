@@ -54,3 +54,4 @@ jobs:
             assets/blog/**
             data/**
             sitemap.xml
+            index.html

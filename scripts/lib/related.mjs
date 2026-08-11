@@ -1,106 +1,133 @@
 /**
- * Sélection des « À lire aussi » par proximité thématique.
+ * Sélection des articles « À lire aussi ».
  *
- * L'ancienne logique prenait les articles les plus RÉCENTS : tout le site
- * pointait vers les deux mêmes pages, sans rapport de sujet. Ici on classe les
- * candidats par similarité (tag + vocabulaire du titre et de l'extrait), ce qui
- * regroupe les articles en clusters thématiques et répartit le maillage.
+ * L'ancienne règle (les 2 conseils les plus récents) concentrait tous les liens
+ * internes sur les deux derniers articles publiés : le reste du blog se
+ * retrouvait à 2 liens entrants, trop peu pour que Google dépense du budget de
+ * crawl dessus. On choisit désormais par proximité thématique, avec une pénalité
+ * sur les cibles déjà très liées pour que chaque article reçoive sa part.
  */
 
-/** Mots trop fréquents pour porter du sens — ignorés dans le calcul. */
+export const RELATED_COUNT = 6;
+
+// Poids du rééquilibrage : plus il est haut, plus les liens sont répartis
+// uniformément au détriment de la pertinence thématique.
+const SPREAD = 0.6;
+
 const STOPWORDS = new Set([
-  'avec', 'sans', 'pour', 'dans', 'vous', 'votre', 'vos', 'nos', 'notre', 'plus',
-  'tout', 'tous', 'toute', 'toutes', 'faire', 'bien', 'comment', 'quoi', 'quand',
-  'cette', 'celui', 'leur', 'leurs', 'entre', 'aussi', 'meme', 'meilleurs',
-  'meilleures', 'meilleur', 'meilleure', 'guide', 'complet', 'conseils', 'conseil',
-  'astuces', 'astuce', 'idees', 'idee', 'etre', 'avoir', 'peut', 'faut', 'sont',
-  'est', 'les', 'des', 'une', 'que', 'qui', 'sur', 'par', 'aux', 'ses', 'son',
-  'pas', 'ces', 'ceux', 'chez', 'dont', 'ou', 'et', 'a', 'de', 'du', 'le', 'la',
+  'avec', 'sans', 'pour', 'dans', 'chez', 'vers', 'depuis', 'entre', 'entiere',
+  'votre', 'vos', 'nos', 'notre', 'leur', 'leurs', 'cette', 'cet', 'ces', 'les',
+  'des', 'une', 'aux', 'que', 'qui', 'quoi', 'dont', 'plus', 'moins', 'tout',
+  'tous', 'toute', 'toutes', 'meme', 'aussi', 'ainsi', 'donc', 'mais', 'car',
+  'faire', 'fait', 'etre', 'avoir', 'peut', 'sur', 'par', 'est', 'son', 'sa',
+  'ses', 'comment', 'pourquoi', 'quand', 'guide', 'complet', 'conseils',
+  'astuces', 'pratiques', 'idees', 'top', 'les', 'ultime', 'reussi', 'reussie',
+  'bien', 'mieux', 'tres', 'petit', 'grand', 'nouveau', 'voyage', 'voyages',
+  'voyager', 'partir', 'vacances',
 ]);
 
-/** Minuscules sans accents : « Bien-être » et « bien etre » doivent matcher. */
+// Diacritiques combinants laissés par la décomposition NFD (accents français).
+const COMBINING_MARKS = /\p{Diacritic}/gu;
+
+/** Minuscules, accents retirés. */
 function normalize(str) {
   return String(str || '')
-    .toLowerCase()
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '');
+    .replace(COMBINING_MARKS, '')
+    .toLowerCase();
 }
 
 function tokenize(str) {
-  return normalize(str)
-    .split(/[^a-z0-9]+/)
-    .filter((w) => w.length >= 4 && !STOPWORDS.has(w));
+  return new Set(
+    normalize(str)
+      .split(/[^a-z0-9]+/)
+      .filter((w) => w.length >= 4 && !STOPWORDS.has(w))
+  );
 }
 
-/** Transforme les registres en corpus commun, indexé pour le scoring. */
-export function buildCorpus({ destinations = [], tips = [] }) {
-  const entry = (item, type) => ({
+/** Représentation commune aux conseils et aux destinations. */
+function toNode(entry, type) {
+  return {
     type,
-    slug: item.slug,
-    title: item.title,
-    tag: item.tag || '',
-    date: item.date || '',
-    titleTokens: new Set(tokenize(item.title)),
-    bodyTokens: new Set(tokenize(item.excerpt)),
-    tagKey: normalize(item.tag),
-  });
+    slug: entry.slug,
+    title: entry.title,
+    tag: normalize(entry.tag),
+    country: normalize(entry.country || ''),
+    date: String(entry.date || ''),
+    tokens: tokenize(`${entry.title} ${entry.excerpt || ''} ${entry.tag || ''}`),
+    key: `${type}:${entry.slug}`,
+  };
+}
 
-  return [
-    ...destinations.map((d) => entry(d, 'destination')),
-    ...tips.map((t) => entry(t, 'tip')),
+/** Score de proximité entre deux articles. */
+function affinity(a, b) {
+  let shared = 0;
+  for (const t of a.tokens) if (b.tokens.has(t)) shared += 1;
+
+  let score = shared * 2;
+  if (a.tag && a.tag === b.tag) score += 3;
+  if (a.country && a.country === b.country) score += 2;
+  // Un lien conseil ↔ destination relie les deux silos du blog : les
+  // destinations sont sinon accessibles uniquement via leur propre listing.
+  if (a.type !== b.type) score += 1.5;
+  return score;
+}
+
+/**
+ * Construit la table des articles liés pour tout le blog.
+ *
+ * @returns {Map<string, Array<{type: string, slug: string, title: string}>>}
+ *          clé « tip:<slug> » ou « destination:<slug> ».
+ */
+export function buildRelatedMap({ destinations = [], tips = [], count = RELATED_COUNT } = {}) {
+  const nodes = [
+    ...destinations.map((d) => toNode(d, 'destination')),
+    ...tips.map((t) => toNode(t, 'tip')),
   ];
-}
 
-function overlap(a, b) {
-  let n = 0;
-  for (const w of a) if (b.has(w)) n++;
-  return n;
-}
+  const inbound = new Map(nodes.map((n) => [n.key, 0]));
+  const result = new Map();
 
-/**
- * Score de proximité entre deux entrées du corpus.
- * Le titre pèse plus que l'extrait : c'est lui qui porte le sujet réel.
- */
-function score(a, b) {
-  let s = 0;
-  if (a.tagKey && a.tagKey === b.tagKey) s += 5;
-  s += 3 * overlap(a.titleTokens, b.titleTokens);
-  s += 2 * overlap(a.titleTokens, b.bodyTokens);
-  s += 2 * overlap(a.bodyTokens, b.titleTokens);
-  s += 1 * overlap(a.bodyTokens, b.bodyTokens);
-  return s;
-}
+  // Ordre stable (du plus ancien au plus récent) : le résultat ne dépend pas de
+  // l'ordre des registres, et les articles anciens se servent en premier.
+  const sources = nodes.slice().sort((a, b) => a.date.localeCompare(b.date) || a.key.localeCompare(b.key));
 
-/**
- * Choisit les articles à mettre en « À lire aussi ».
- *
- * On garantit au moins un lien vers l'autre famille (destination ↔ conseil)
- * pour que les deux clusters restent connectés, sinon les destinations et les
- * conseils formeraient deux îlots séparés.
- *
- * @param {string} slug   article courant (exclu des résultats)
- * @param {Array}  corpus sortie de buildCorpus()
- * @param {number} limit  nombre de liens souhaité (3 à 5 recommandé)
- * @returns {Array<{type:string, slug:string, title:string}>}
- */
-export function pickRelated(slug, corpus, { limit = 4 } = {}) {
-  const self = corpus.find((e) => e.slug === slug);
-  if (!self) return [];
+  for (const src of sources) {
+    const ranked = nodes
+      .filter((n) => n.key !== src.key)
+      .map((n) => ({ node: n, base: affinity(src, n) }))
+      .sort((x, y) => {
+        const sx = x.base - SPREAD * inbound.get(x.node.key);
+        const sy = y.base - SPREAD * inbound.get(y.node.key);
+        return sy - sx || y.node.date.localeCompare(x.node.date);
+      });
 
-  const ranked = corpus
-    .filter((e) => e.slug !== slug)
-    .map((e) => ({ e, s: score(self, e) }))
-    // Tri déterministe : score, puis date récente, puis slug — pour que deux
-    // exécutions produisent le même HTML (diffs git propres).
-    .sort((x, y) => y.s - x.s || String(y.e.date).localeCompare(x.e.date) || x.e.slug.localeCompare(y.e.slug));
+    const picked = [];
+    // On réserve une place à l'autre silo pour ne jamais isoler les destinations.
+    const otherType = ranked.find((r) => r.node.type !== src.type);
+    if (otherType) picked.push(otherType.node);
+    for (const r of ranked) {
+      if (picked.length >= count) break;
+      if (!picked.includes(r.node)) picked.push(r.node);
+    }
 
-  const chosen = ranked.slice(0, limit).map((r) => r.e);
-
-  // Garantit la passerelle entre les deux familles d'articles.
-  if (chosen.length === limit && !chosen.some((e) => e.type !== self.type)) {
-    const bridge = ranked.find((r) => r.e.type !== self.type);
-    if (bridge) chosen[limit - 1] = bridge.e;
+    for (const n of picked) inbound.set(n.key, inbound.get(n.key) + 1);
+    result.set(src.key, picked.map((n) => ({ type: n.type, slug: n.slug, title: n.title })));
   }
 
-  return chosen.map((e) => ({ type: e.type, slug: e.slug, title: e.title }));
+  return result;
+}
+
+/** Statistiques de maillage, pour vérifier qu'aucun article n'est orphelin. */
+export function inboundStats(relatedMap) {
+  const counts = new Map();
+  for (const items of relatedMap.values()) {
+    for (const it of items) {
+      const k = `${it.type}:${it.slug}`;
+      counts.set(k, (counts.get(k) || 0) + 1);
+    }
+  }
+  for (const key of relatedMap.keys()) if (!counts.has(key)) counts.set(key, 0);
+  const values = [...counts.values()].sort((a, b) => a - b);
+  return { counts, min: values[0] ?? 0, max: values[values.length - 1] ?? 0 };
 }
