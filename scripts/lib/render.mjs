@@ -124,7 +124,7 @@ function tipSections(sections) {
 export async function renderDestination({ content, photos, palette, slug, date, relatedTips }) {
   const tpl = await readText(join(ROOT, 'blog/_templates/destination.html'));
   const prefix = '../../../'; // depuis /blog/destinations/<slug>/
-  const alt = `${content.titleShort} — ${content.titleShort}`;
+  const alt = content.titleShort;
   const url = `${SITE_URL}/blog/destinations/${slug}/`;
   const ogImage = photos.cover ? `${SITE_URL}/${photos.cover}` : `${SITE_URL}/assets/miniature-odyssa.png`;
 

@@ -46,7 +46,34 @@ function tipCard(t, { hrefBase, photoPrefix }) {
         </a>`;
 }
 
+function homeCard(a) {
+  const photo = a.cover
+    ? `<img src="${escapeHtml(a.cover)}" alt="${escapeHtml(a.title)}" loading="lazy">`
+    : '';
+  return `        <a href="${a.href}" class="home-blog-card">
+          <div class="home-blog-card-photo">${photo}
+            <span class="home-blog-card-tag">${escapeHtml(a.tag)}</span>
+          </div>
+          <div class="home-blog-card-body">
+            <h3>${escapeHtml(a.title)}</h3>
+            <p>${escapeHtml(a.excerpt)}</p>
+            <span class="home-blog-card-meta">${escapeHtml(a.readingTime)}</span>
+          </div>
+        </a>`;
+}
+
 const byDateDesc = (a, b) => String(b.date).localeCompare(String(a.date));
+
+/**
+ * Arrondit un compteur vers le bas pour l'afficher en « + de N » : la home n'a
+ * plus besoin d'être mise à jour à chaque publication.
+ * Sous le premier palier, on garde la valeur exacte (« + de 0 » n'a aucun sens).
+ */
+function roundedStat(n) {
+  const step = n >= 100 ? 50 : n >= 50 ? 25 : n >= 20 ? 10 : 5;
+  const count = Math.floor(n / step) * step;
+  return count >= step ? { count, prefix: '+ de ' } : { count: n, prefix: '' };
+}
 
 /** Régénère les grilles de cartes dans les pages de listing. */
 export async function rebuildListings() {
@@ -91,6 +118,49 @@ export async function rebuildListings() {
     tips.map((t) => tipCard(t, { hrefBase: '../', photoPrefix: '../../' })).join('\n\n')
   );
   await writeText(conseilsIndexPath, conseilsIndex);
+
+  // --- index.html : 3 destinations + 3 conseils, mélangés du plus récent au plus ancien ---
+  // (on réserve des places aux deux catégories pour que la home ne se retrouve jamais 100 % conseils)
+  const latest = [
+    ...destinations.slice(0, 3).map((d) => ({ ...d, href: `blog/destinations/${d.slug}/`, tag: d.tag || 'Destination' })),
+    ...tips.slice(0, 3).map((t) => ({ ...t, href: `blog/${t.slug}/` })),
+  ].sort(byDateDesc);
+
+  const homePath = join(ROOT, 'index.html');
+  let home = await readText(homePath);
+  home = replaceBetween(
+    home,
+    '<!-- AUTO:HOME_BLOG_CARDS:START -->',
+    '<!-- AUTO:HOME_BLOG_CARDS:END -->',
+    latest.map(homeCard).join('\n\n')
+  );
+
+  // Bandeau défilant des destinations — la liste est dupliquée pour boucler sans couture
+  const marqueeItems = destinations.map(
+    (d) => `          <a href="blog/destinations/${d.slug}/" class="destband-item">${escapeHtml(d.tag || d.title)}</a>`
+  );
+  const marquee = [
+    ...marqueeItems,
+    ...destinations.map(
+      (d) => `          <a href="blog/destinations/${d.slug}/" class="destband-item" aria-hidden="true" tabindex="-1">${escapeHtml(d.tag || d.title)}</a>`
+    ),
+  ].join('\n');
+  home = replaceBetween(home, '<!-- AUTO:DEST_MARQUEE:START -->', '<!-- AUTO:DEST_MARQUEE:END -->', marquee);
+
+  // Compteurs animés du bloc blog — valeurs arrondies vers le bas (« + de 30 »)
+  const stats = [
+    { value: destinations.length + tips.length, label: 'articles publiés' },
+    { value: destinations.length, label: 'destinations décryptées' },
+  ]
+    .map(({ value, label }) => {
+      const { count, prefix } = roundedStat(value);
+      const prefixHtml = prefix ? `<span class="home-blog-stats-prefix">${prefix}</span>` : '';
+      return `            <li><strong>${prefixHtml}<span data-count-to="${count}">0</span></strong><span>${escapeHtml(label)}</span></li>`;
+    })
+    .join('\n');
+  home = replaceBetween(home, '<!-- AUTO:HOME_BLOG_STATS:START -->', '<!-- AUTO:HOME_BLOG_STATS:END -->', stats);
+
+  await writeText(homePath, home);
 }
 
 /** Régénère sitemap.xml à partir des pages statiques + registres. */
@@ -108,6 +178,7 @@ export async function rebuildSitemap() {
     url(`${SITE_URL}/blog/conseils/`, 'weekly', '0.8'),
     ...destinations.map((d) => url(`${SITE_URL}/blog/destinations/${d.slug}/`, 'monthly', '0.7')),
     ...tips.map((t) => url(`${SITE_URL}/blog/${t.slug}/`, 'monthly', '0.7')),
+    url(`${SITE_URL}/about/`, 'monthly', '0.6'),
     url(`${SITE_URL}/support/`, 'monthly', '0.5'),
     url(`${SITE_URL}/privacy-policy/`, 'yearly', '0.3'),
     url(`${SITE_URL}/terms-of-service/`, 'yearly', '0.3'),

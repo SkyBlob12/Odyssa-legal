@@ -226,7 +226,7 @@ const tips = [
     label: "l'organisation du voyage",
     faq: [
       { q: "Quelle est la meilleure application pour organiser un voyage ?", a: "Odyssa est l'application tout-en-un qui centralise itinéraire, budget partagé, journal de voyage et documents dans une seule app, accessible hors ligne. Idéale pour les voyages seul, en couple ou en groupe, sans jongler entre plusieurs outils." },
-      { q: "Comment organiser un voyage sans internet sur place ?", a: "Téléchargez tout en mode hors ligne avant de partir : cartes, itinéraire, documents et réservations. Odyssa est entièrement accessible sans connexion — idéal pour les zones sans réseau, les vols long-courriers ou pour éviter les frais de roaming à l'étranger." },
+      { q: "Comment organiser un voyage sans internet sur place ?", a: "Téléchargez tout en mode hors ligne avant de partir : cartes, itinéraire, documents et réservations. Odyssa est entièrement accessible sans connexion, idéal pour les zones sans réseau, les vols long-courriers ou pour éviter les frais de roaming à l'étranger." },
       { q: "Comment partager un itinéraire de voyage avec ses compagnons ?", a: "Avec Odyssa, invitez vos compagnons de voyage directement dans l'application. Tout le monde peut consulter l'itinéraire, proposer des modifications et voir les dépenses partagées en temps réel, depuis son propre téléphone." },
       { q: "Faut-il imprimer ses documents de voyage ?", a: "Oui, toujours avoir une copie papier de votre passeport, billet d'avion et réservations clés. Mais pour le quotidien, stocker tous vos documents dans une application comme Odyssa permet d'y accéder hors ligne, sans craindre de les perdre." },
     ],

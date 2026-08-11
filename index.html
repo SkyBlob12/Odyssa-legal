@@ -11,77 +11,154 @@
     gtag('config', 'G-H98GV564Z2');
   </script>
   <meta name="google-site-verification" content="OpBto1LvYwuCKRwgRCDMxD1KoiQooy8QY55Mmn_bNjY">
-  <meta name="google-adsense-account" content="ca-pub-7497823030976949">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0F172A">
   <meta name="description" content="⭐ 5/5 sur l'App Store · Planifiez, organisez et partagez vos voyages. Itinéraires par IA, journal de voyage, partage de dépenses et mode hors ligne. Gratuit sur iOS et Android.">
-  <title>Odyssa</title>
+  <title>Odyssa - Planifiez, organisez et partagez vos voyages</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="preload" as="image" href="assets/hero-bg.jpg">
-  <link rel="icon" type="image/png" href="favicon.png" id="favicon">
-  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preload" as="image" href="assets/odyssa-app-mockup.webp">
+  <!-- Favicon : le fichier statique doit rester le pictogramme SOMBRE.
+       Google le pose sur une pastille blanche, un logo blanc y serait invisible. -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png" id="favicon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="canonical" href="https://odyssa-app.com/">
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Odyssa",
-      "alternateName": "Odyssa - Planifiez, Organisez, Voyagez",
-      "url": "https://odyssa-app.com"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Odyssa",
-      "url": "https://odyssa-app.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://odyssa-app.com/assets/logo-google.png",
-        "width": 1200,
-        "height": 1200
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://odyssa-app.com/#website",
+        "url": "https://odyssa-app.com/",
+        "name": "Odyssa",
+        "alternateName": "Odyssa App",
+        "description": "Planifiez, organisez et partagez vos voyages : itinéraires par IA, journal de voyage, partage de dépenses et mode hors ligne.",
+        "inLanguage": "fr-FR",
+        "publisher": { "@id": "https://odyssa-app.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://odyssa-app.com/#organization",
+        "name": "Odyssa",
+        "alternateName": "Odyssa App",
+        "url": "https://odyssa-app.com/",
+        "email": "contact.odyssa@proton.me",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://odyssa-app.com/#logo",
+          "url": "https://odyssa-app.com/assets/logo-google.png",
+          "contentUrl": "https://odyssa-app.com/assets/logo-google.png",
+          "width": 1200,
+          "height": 1200,
+          "caption": "Odyssa"
+        },
+        "image": { "@id": "https://odyssa-app.com/#logo" },
+        "sameAs": [
+          "https://x.com/Odyssa_app",
+          "https://www.instagram.com/odyssa_app/",
+          "https://www.tiktok.com/@odyssa_app",
+          "https://www.linkedin.com/company/odyssa-app/",
+          "https://apps.apple.com/fr/app/odyssa/id6758266472"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://odyssa-app.com/#webpage",
+        "url": "https://odyssa-app.com/",
+        "name": "Odyssa - Planifiez, organisez et partagez vos voyages",
+        "isPartOf": { "@id": "https://odyssa-app.com/#website" },
+        "about": { "@id": "https://odyssa-app.com/#organization" },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "@id": "https://odyssa-app.com/#navigation",
+        "name": [
+          "Blog voyage",
+          "Destinations",
+          "Conseils & guides",
+          "À propos",
+          "Support",
+          "Télécharger l'application"
+        ],
+        "url": [
+          "https://odyssa-app.com/blog/",
+          "https://odyssa-app.com/blog/destinations/",
+          "https://odyssa-app.com/blog/conseils/",
+          "https://odyssa-app.com/about/",
+          "https://odyssa-app.com/support/",
+          "https://apps.apple.com/fr/app/odyssa/id6758266472"
+        ]
       }
-    }
-  ]
+    ]
+  }
   </script>
   <!-- Open Graph -->
   <meta property="og:site_name" content="Odyssa">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://odyssa-app.com/">
-  <meta property="og:title" content="Odyssa - Planifiez, Organisez, Voyagez">
+  <meta property="og:title" content="Odyssa - Planifiez, organisez et partagez vos voyages">
   <meta property="og:description" content="Planifiez, organisez et partagez vos voyages. Itinéraires par IA, journal de voyage, communauté, documents et partage de dépenses dans votre poche.">
   <meta property="og:image" content="https://odyssa-app.com/assets/miniature-odyssa.png">
   <meta property="og:locale" content="fr_FR">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Odyssa - Planifiez, Organisez, Voyagez">
+  <meta name="twitter:title" content="Odyssa - Planifiez, organisez et partagez vos voyages">
   <meta name="twitter:description" content="Planifiez, organisez et partagez vos voyages. Itinéraires par IA, journal de voyage, communauté, documents et partage de dépenses dans votre poche.">
   <meta name="twitter:image" content="https://odyssa-app.com/assets/miniature-odyssa.png">
 </head>
 <body>
 
+  <!-- Navigation -->
+  <header class="site-nav" id="siteNav">
+    <div class="site-nav-inner">
+      <a href="/" class="site-nav-brand" aria-label="Odyssa, accueil">
+        <img src="assets/odyssa-logo.png" alt="">
+        <span>Odyssa</span>
+      </a>
+
+      <nav class="site-nav-links" id="siteNavLinks" aria-label="Navigation principale">
+        <a href="#showcase">L'app</a>
+        <a href="#features">Fonctionnalités</a>
+        <a href="blog/">Blog</a>
+        <a href="about/">À propos</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="site-nav-actions">
+        <a href="blog/" class="site-nav-blog" aria-label="Lire le blog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </a>
+        <a href="#download" class="site-nav-cta">Télécharger</a>
+        <button class="site-nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="siteNavLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
   <!-- Hero -->
   <section class="hero-section" id="hero">
-    <a href="/" class="hero-logo-floating" aria-label="Odyssa — Accueil">
-      <img src="assets/odyssa-logo.png" alt="Odyssa">
-      <span>Odyssa</span>
-    </a>
-    <a href="blog/" class="hero-blog-link">Blog</a>
+    <div class="hero-aurora" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="hero-text">
         <a href="https://apps.apple.com/fr/app/odyssa/id6758266472" class="hero-rating-badge" aria-label="Note 5 sur 5">
           <span class="hero-rating-stars">★★★★★</span>
           <span class="hero-rating-text">5,0 · Note moyenne</span>
         </a>
-        <h1>Planifiez, Organisez, Voyagez.</h1>
+        <h1>Planifiez, Organisez, <span class="hero-h1-accent">Voyagez.</span></h1>
         <p class="hero-subtitle">Fini les notes éparpillées et les calculs de remboursements entre amis. Tout ce dont vous avez besoin pour un voyage réussi, dans une seule application.</p>
       </div>
-      <div class="hero-mockup">
+      <div class="hero-mockup" id="heroMockup">
         <div class="phone-frame">
-          <img src="assets/odyssa-app-mockup.png" alt="Aperçu de l'application Odyssa - Liste de voyages" loading="lazy">
+          <span class="phone-gloss" aria-hidden="true"></span>
+          <img src="assets/odyssa-app-mockup.webp" alt="Aperçu de l'application Odyssa - Liste de voyages" width="720" height="1558" fetchpriority="high">
         </div>
       </div>
       <div class="hero-cta-center">
@@ -107,100 +184,260 @@
     </div>
   </section>
 
-  <!-- Screenshots -->
-  <section class="screenshots-section">
-    <div class="screenshots-container">
-      <h2 class="fade-up">L'app en images</h2>
-      <p class="screenshots-subtitle fade-up">Tout ce dont vous avez besoin, dans une interface pensée pour les voyageurs.</p>
-      <div class="screenshots-scroll">
-        <div class="screenshot-item fade-up fade-up-delay-1">
-          <div class="screenshot-phone">
-            <img src="assets/screenshot-ia.PNG" alt="Génération d'itinéraire par IA" loading="lazy">
-          </div>
-          <p class="screenshot-caption">Itinéraire généré par IA en quelques secondes</p>
-        </div>
-        <div class="screenshot-item fade-up fade-up-delay-2">
-          <div class="screenshot-phone">
-            <img src="assets/screenshot-itineraire.PNG" alt="Itinéraire jour par jour" loading="lazy">
-          </div>
-          <p class="screenshot-caption">Planifiez chaque journée, activité par activité</p>
-        </div>
-        <div class="screenshot-item fade-up fade-up-delay-3">
-          <div class="screenshot-phone">
-            <img src="assets/screenshot-budget.PNG" alt="Budget et dépenses" loading="lazy">
-          </div>
-          <p class="screenshot-caption">Suivez vos dépenses par catégorie</p>
-        </div>
-        <div class="screenshot-item fade-up">
-          <div class="screenshot-phone">
-            <img src="assets/screenshot-journal.PNG" alt="Journal de voyage géolocalisé" loading="lazy">
-          </div>
-          <p class="screenshot-caption">Journal de voyage avec photos géolocalisées</p>
-        </div>
-        <div class="screenshot-item fade-up">
-          <div class="screenshot-phone">
-            <img src="assets/screenshot-globe.PNG" alt="Globe 3D des pays visités" loading="lazy">
-          </div>
-          <p class="screenshot-caption">Visualisez tous les pays que vous avez visités</p>
-        </div>
+  <!-- Bandeau destinations -->
+  <section class="destband" aria-label="Destinations couvertes par le blog Odyssa">
+    <div class="destband-marquee">
+      <div class="destband-row" id="destbandRow">
+        <!-- AUTO:DEST_MARQUEE:START -->
+          <a href="blog/destinations/vietnam/" class="destband-item">Vietnam</a>
+          <a href="blog/destinations/colombie/" class="destband-item">Pays</a>
+          <a href="blog/destinations/bolivie/" class="destband-item">Bolivie</a>
+          <a href="blog/destinations/australie/" class="destband-item">Australie</a>
+          <a href="blog/destinations/polynesie-francaise/" class="destband-item">France</a>
+          <a href="blog/destinations/iles-feroes/" class="destband-item">Danemark</a>
+          <a href="blog/destinations/pantanal/" class="destband-item">Brésil</a>
+          <a href="blog/destinations/islande/" class="destband-item">Islande</a>
+          <a href="blog/destinations/perou/" class="destband-item">Pérou</a>
+          <a href="blog/destinations/tanzanie/" class="destband-item">Tanzanie</a>
+          <a href="blog/destinations/japon/" class="destband-item">Japon</a>
+          <a href="blog/destinations/portugal/" class="destband-item">Portugal</a>
+          <a href="blog/destinations/maroc/" class="destband-item">Maroc</a>
+          <a href="blog/destinations/vietnam/" class="destband-item" aria-hidden="true" tabindex="-1">Vietnam</a>
+          <a href="blog/destinations/colombie/" class="destband-item" aria-hidden="true" tabindex="-1">Pays</a>
+          <a href="blog/destinations/bolivie/" class="destband-item" aria-hidden="true" tabindex="-1">Bolivie</a>
+          <a href="blog/destinations/australie/" class="destband-item" aria-hidden="true" tabindex="-1">Australie</a>
+          <a href="blog/destinations/polynesie-francaise/" class="destband-item" aria-hidden="true" tabindex="-1">France</a>
+          <a href="blog/destinations/iles-feroes/" class="destband-item" aria-hidden="true" tabindex="-1">Danemark</a>
+          <a href="blog/destinations/pantanal/" class="destband-item" aria-hidden="true" tabindex="-1">Brésil</a>
+          <a href="blog/destinations/islande/" class="destband-item" aria-hidden="true" tabindex="-1">Islande</a>
+          <a href="blog/destinations/perou/" class="destband-item" aria-hidden="true" tabindex="-1">Pérou</a>
+          <a href="blog/destinations/tanzanie/" class="destband-item" aria-hidden="true" tabindex="-1">Tanzanie</a>
+          <a href="blog/destinations/japon/" class="destband-item" aria-hidden="true" tabindex="-1">Japon</a>
+          <a href="blog/destinations/portugal/" class="destband-item" aria-hidden="true" tabindex="-1">Portugal</a>
+          <a href="blog/destinations/maroc/" class="destband-item" aria-hidden="true" tabindex="-1">Maroc</a>
+        <!-- AUTO:DEST_MARQUEE:END -->
       </div>
     </div>
   </section>
 
-  <!-- Pour qui -->
+  <!-- Showcase — un seul téléphone, l'écran change au scroll -->
+  <section class="showcase" id="showcase">
+    <div class="showcase-intro">
+      <span class="section-kicker fade-up">L&rsquo;application</span>
+      <h2 class="fade-up">Une app, tout votre voyage</h2>
+      <p class="showcase-subtitle fade-up">Faites défiler pour découvrir Odyssa, écran par écran.</p>
+    </div>
+
+    <div class="showcase-track" id="showcaseTrack" data-active="0">
+      <div class="showcase-sticky">
+        <div class="showcase-stage">
+
+          <!-- Colonne gauche : le récit -->
+          <div class="showcase-col showcase-col-left">
+            <article class="showcase-panel" data-panel="0">
+              <span class="showcase-eyebrow"><em>01</em> Itinéraire par IA</span>
+              <h3>Un itinéraire complet en 30 secondes</h3>
+              <p>Indiquez votre destination, vos dates et vos envies. L'IA construit un programme jour par jour, que vous restez entièrement libre de modifier.</p>
+            </article>
+            <article class="showcase-panel" data-panel="1">
+              <span class="showcase-eyebrow"><em>02</em> Planification</span>
+              <h3>Chaque journée, activité par activité</h3>
+              <p>Activités, transports, hébergements : tout est à sa place, avec horaires et adresses. Vos compagnons de voyage voient les modifications en temps réel.</p>
+            </article>
+            <article class="showcase-panel" data-panel="2">
+              <span class="showcase-eyebrow"><em>03</em> Carte du voyage</span>
+              <h3>Tout le voyage sur une seule carte</h3>
+              <p>Visites, restaurants, hébergements, trajets : chaque étape se place où elle se trouve vraiment. Filtrez par jour pour voir à quoi ressemble votre journée avant même d'y être.</p>
+            </article>
+            <article class="showcase-panel" data-panel="3">
+              <span class="showcase-eyebrow"><em>04</em> Budget partagé</span>
+              <h3>Qui a payé quoi ? Odyssa fait les comptes</h3>
+              <p>Ajoutez une dépense, choisissez qui participe, et l'app calcule les remboursements. Même quand le voyage traverse trois devises.</p>
+            </article>
+            <article class="showcase-panel" data-panel="4">
+              <span class="showcase-eyebrow"><em>05</em> Journal de voyage</span>
+              <h3>Votre carnet de voyage, géolocalisé</h3>
+              <p>Photos, notes et lieux visités se placent tout seuls sur une carte. De quoi revivre le voyage au retour, et le partager à ceux qui l'ont manqué.</p>
+            </article>
+            <article class="showcase-panel" data-panel="5">
+              <span class="showcase-eyebrow"><em>06</em> Globe &amp; statistiques</span>
+              <h3>Le monde que vous avez déjà vu</h3>
+              <p>Chaque voyage colorie un pays de plus sur votre globe interactif. Kilomètres parcourus, statistiques, historique complet de vos aventures.</p>
+            </article>
+          </div>
+
+          <!-- Le téléphone (unique) — scène 3D -->
+          <div class="showcase-phone">
+            <div class="showcase-scene" id="showcaseScene">
+              <div class="showcase-rig">
+
+                <!-- Widget flottant, en avant du téléphone -->
+                <div class="showcase-float showcase-float-a" aria-hidden="true">
+                  <span class="showcase-chip" data-panel="0"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg></span>
+                  <span class="showcase-chip" data-panel="1"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+                  <span class="showcase-chip" data-panel="2"><svg viewBox="0 0 24 24"><polygon points="1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21 1 6"/><line x1="8" y1="3" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="21"/></svg></span>
+                  <span class="showcase-chip" data-panel="3"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                  <span class="showcase-chip" data-panel="4"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                  <span class="showcase-chip" data-panel="5"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                </div>
+
+                <button class="showcase-device" id="showcaseDevice" aria-label="Agrandir l'écran affiché">
+                  <span class="showcase-notch"></span>
+                  <span class="showcase-screens">
+                    <img src="assets/screenshot-ia.webp" alt="Assistant IA d'Odyssa : créer tout le programme ou ajouter une activité" data-screen="0" class="is-active">
+                    <img src="assets/screenshot-itineraire.webp" alt="Itinéraire jour par jour dans Odyssa" data-screen="1" loading="lazy">
+                    <img src="assets/screenshot-carte.webp" alt="Carte du voyage avec les étapes jour par jour dans Odyssa" data-screen="2" loading="lazy">
+                    <img src="assets/screenshot-budget.webp" alt="Budget et partage de dépenses dans Odyssa" data-screen="3" loading="lazy">
+                    <img src="assets/screenshot-journal.webp" alt="Journal de voyage géolocalisé dans Odyssa" data-screen="4" loading="lazy">
+                    <img src="assets/screenshot-globe.webp" alt="Globe 3D des pays visités dans Odyssa" data-screen="5" loading="lazy">
+                  </span>
+                  <span class="showcase-gloss" aria-hidden="true"></span>
+                </button>
+
+                <!-- Widget flottant, en retrait derrière le téléphone -->
+                <div class="showcase-float showcase-float-b" aria-hidden="true">
+                  <span class="showcase-chip" data-panel="0"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
+                  <span class="showcase-chip" data-panel="1"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+                  <span class="showcase-chip" data-panel="2"><svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></span>
+                  <span class="showcase-chip" data-panel="3"><svg viewBox="0 0 24 24"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg></span>
+                  <span class="showcase-chip" data-panel="4"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+                  <span class="showcase-chip" data-panel="5"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+                </div>
+
+              </div>
+            </div>
+            <div class="showcase-dots" role="group" aria-label="Écrans de l'application">
+              <button class="showcase-dot is-active" data-dot="0" aria-label="Itinéraire par IA"></button>
+              <button class="showcase-dot" data-dot="1" aria-label="Planification"></button>
+              <button class="showcase-dot" data-dot="2" aria-label="Carte du voyage"></button>
+              <button class="showcase-dot" data-dot="3" aria-label="Budget partagé"></button>
+              <button class="showcase-dot" data-dot="4" aria-label="Journal de voyage"></button>
+              <button class="showcase-dot" data-dot="5" aria-label="Globe et statistiques"></button>
+            </div>
+          </div>
+
+          <!-- Colonne droite : les infos liées -->
+          <div class="showcase-col showcase-col-right">
+            <div class="showcase-panel" data-panel="0">
+              <ul class="showcase-facts">
+                <li><strong>~30 s</strong><span>pour un itinéraire complet</span></li>
+                <li><strong>Sur-mesure</strong><span>rythme, budget et centres d'intérêt</span></li>
+                <li><strong>100 % modifiable</strong><span>l'IA propose, vous décidez</span></li>
+              </ul>
+            </div>
+            <div class="showcase-panel" data-panel="1">
+              <ul class="showcase-facts">
+                <li><strong>Temps réel</strong><span>tout le groupe édite le même plan</span></li>
+                <li><strong>Calendrier iOS</strong><span>vos activités synchronisées</span></li>
+                <li><strong>Hors ligne</strong><span>accessible même sans réseau</span></li>
+              </ul>
+            </div>
+            <div class="showcase-panel" data-panel="2">
+              <ul class="showcase-facts">
+                <li><strong>Jour par jour</strong><span>la carte suit votre programme</span></li>
+                <li><strong>Par catégorie</strong><span>visites, restos, hébergements…</span></li>
+                <li><strong>Trajets tracés</strong><span>d'une étape à la suivante</span></li>
+              </ul>
+            </div>
+            <div class="showcase-panel" data-panel="3">
+              <ul class="showcase-facts">
+                <li><strong>Zéro calcul</strong><span>les remboursements sont automatiques</span></li>
+                <li><strong>Multi-devises</strong><span>conversion au taux du jour</span></li>
+                <li><strong>Par catégorie</strong><span>transport, logement, restos…</span></li>
+              </ul>
+            </div>
+            <div class="showcase-panel" data-panel="4">
+              <ul class="showcase-facts">
+                <li><strong>Géolocalisé</strong><span>chaque photo à sa place sur la carte</span></li>
+                <li><strong>Votre parcours</strong><span>tracé jour après jour</span></li>
+                <li><strong>Partageable</strong><span>un lien, et vos proches suivent</span></li>
+              </ul>
+            </div>
+            <div class="showcase-panel" data-panel="5">
+              <ul class="showcase-facts">
+                <li><strong>Globe 3D</strong><span>vos pays visités en un coup d'œil</span></li>
+                <li><strong>Statistiques</strong><span>voyages, pays, kilomètres</span></li>
+                <li><strong>Historique</strong><span>tous vos voyages archivés</span></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="showcase-step" data-step="0"></div>
+      <div class="showcase-step" data-step="1"></div>
+      <div class="showcase-step" data-step="2"></div>
+      <div class="showcase-step" data-step="3"></div>
+      <div class="showcase-step" data-step="4"></div>
+      <div class="showcase-step" data-step="5"></div>
+    </div>
+  </section>
+
+  <!-- Pour qui — sélecteur -->
   <section class="forwhom-section">
     <div class="forwhom-container">
+      <span class="section-kicker fade-up">Pour qui</span>
       <h2 class="fade-up">Fait pour vous, quel que soit votre voyage</h2>
-      <p class="forwhom-subtitle fade-up">Que vous voyagiez seul, en couple ou entre amis, Odyssa s'adapte à votre façon de voyager.</p>
-      <div class="forwhom-grid">
-        <div class="forwhom-card fade-up fade-up-delay-1">
+      <p class="forwhom-subtitle fade-up">Choisissez votre façon de voyager, Odyssa s'y adapte.</p>
+
+      <div class="forwhom-switch fade-up" role="tablist" aria-label="Type de voyage">
+        <span class="forwhom-switch-pill" aria-hidden="true"></span>
+        <button role="tab" id="whoTab0" aria-controls="whoPanel0" aria-selected="true" data-who="0">Solo</button>
+        <button role="tab" id="whoTab1" aria-controls="whoPanel1" aria-selected="false" tabindex="-1" data-who="1">Couple &amp; famille</button>
+        <button role="tab" id="whoTab2" aria-controls="whoPanel2" aria-selected="false" tabindex="-1" data-who="2">Entre amis</button>
+      </div>
+
+      <div class="forwhom-stack fade-up">
+        <div class="forwhom-panel is-active" role="tabpanel" id="whoPanel0" aria-labelledby="whoTab0" data-who="0">
           <div class="forwhom-icon forwhom-icon-1">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
             </svg>
           </div>
-          <h3>Voyage en solo</h3>
-          <p>Planifiez à votre rythme, sans compromis. L'IA génère un itinéraire sur-mesure selon vos envies, et tout reste accessible hors ligne.</p>
-          <ul class="forwhom-list">
-            <li>Itinéraire IA personnalisé</li>
-            <li>Documents toujours à portée</li>
-            <li>Journal pour garder vos souvenirs</li>
-          </ul>
+          <div class="forwhom-body">
+            <h3>Voyage en solo</h3>
+            <p>Planifiez à votre rythme, sans compromis. L'IA génère un itinéraire sur-mesure selon vos envies, et tout reste accessible hors ligne.</p>
+            <ul class="forwhom-list">
+              <li>Itinéraire IA personnalisé</li>
+              <li>Documents toujours à portée</li>
+              <li>Journal pour garder vos souvenirs</li>
+            </ul>
+          </div>
         </div>
-        <div class="forwhom-card fade-up fade-up-delay-2">
+
+        <div class="forwhom-panel" role="tabpanel" id="whoPanel1" aria-labelledby="whoTab1" data-who="1" hidden>
           <div class="forwhom-icon forwhom-icon-2">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
           </div>
-          <h3>En couple ou en famille</h3>
-          <p>Planifiez ensemble en temps réel, synchronisez le calendrier iOS et gardez tous vos documents au même endroit.</p>
-          <ul class="forwhom-list">
-            <li>Planification collaborative</li>
-            <li>Sync calendrier iOS</li>
-            <li>Budget partagé en temps réel</li>
-          </ul>
+          <div class="forwhom-body">
+            <h3>En couple ou en famille</h3>
+            <p>Planifiez ensemble en temps réel, synchronisez le calendrier iOS et gardez tous vos documents au même endroit.</p>
+            <ul class="forwhom-list">
+              <li>Planification collaborative</li>
+              <li>Sync calendrier iOS</li>
+              <li>Budget partagé en temps réel</li>
+            </ul>
+          </div>
         </div>
-        <div class="forwhom-card fade-up fade-up-delay-3">
+
+        <div class="forwhom-panel" role="tabpanel" id="whoPanel2" aria-labelledby="whoTab2" data-who="2" hidden>
           <div class="forwhom-icon forwhom-icon-3">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              <path d="M21 21v-2a4 4 0 0 0-3-3.87"/>
+              <circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/>
             </svg>
           </div>
-          <h3>Entre amis</h3>
-          <p>Fini les remboursements compliqués. Odyssa calcule automatiquement qui doit quoi, en plusieurs devises si besoin.</p>
-          <ul class="forwhom-list">
-            <li>Partage de dépenses automatique</li>
-            <li>Multi-devises</li>
-            <li>Communauté de conseils voyage</li>
-          </ul>
+          <div class="forwhom-body">
+            <h3>Entre amis</h3>
+            <p>Fini les remboursements compliqués. Odyssa calcule automatiquement qui doit quoi, en plusieurs devises si besoin.</p>
+            <ul class="forwhom-list">
+              <li>Partage de dépenses automatique</li>
+              <li>Multi-devises</li>
+              <li>Communauté de conseils voyage</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -209,6 +446,7 @@
   <!-- Fonctionnalités -->
   <section class="features-section" id="features">
     <div class="features-container">
+      <span class="section-kicker fade-up">Fonctionnalités</span>
       <h2 class="fade-up">Tout ce dont vous avez besoin</h2>
       <p class="features-subtitle fade-up">Des outils pensés pour simplifier chaque étape de vos voyages.</p>
       <div class="features-grid">
@@ -366,6 +604,7 @@
   <!-- Comment ça marche -->
   <section class="steps-section">
     <div class="steps-container">
+      <span class="section-kicker fade-up">Prise en main</span>
       <h2 class="fade-up">Comment ça marche</h2>
       <p class="steps-subtitle fade-up">Prêt en 3 étapes simples.</p>
       <div class="steps-grid">
@@ -409,16 +648,17 @@
   <!-- Avis App Store -->
   <section class="reviews-section">
     <div class="reviews-container">
+      <span class="section-kicker fade-up">Avis</span>
       <h2 class="fade-up">Ce que disent nos utilisateurs</h2>
-      <p class="reviews-subtitle fade-up">Des avis authentiques laissés par nos utilisateurs.</p>
+      <p class="reviews-subtitle fade-up">Des avis authentiques laissés sur l'App Store.</p>
 
-      <div class="rating-badge fade-up">
-        <div class="rating-badge-score">
-          <span class="rating-number">5,0</span>
-          <span class="rating-stars-global">★★★★★</span>
-          <span class="rating-count">7 avis</span>
-        </div>
-      </div>
+      <a href="https://apps.apple.com/fr/app/odyssa/id6758266472" class="reviews-score fade-up">
+        <span class="reviews-score-value" data-count-to="5" data-count-decimals="1">0,0</span>
+        <span class="reviews-score-meta">
+          <span class="reviews-score-stars">★★★★★</span>
+          <span>Note moyenne sur l'App Store</span>
+        </span>
+      </a>
 
       <div class="reviews-grid">
         <div class="review-card fade-up fade-up-delay-1">
@@ -444,8 +684,9 @@
   </section>
 
   <!-- FAQ -->
-  <section class="faq-section">
+  <section class="faq-section" id="faq">
     <div class="faq-container">
+      <span class="section-kicker fade-up">FAQ</span>
       <h2 class="fade-up">Questions fréquentes</h2>
       <p class="faq-subtitle fade-up">Tout ce que vous voulez savoir avant de vous lancer.</p>
       <div class="faq-list">
@@ -495,8 +736,112 @@
     </div>
   </section>
 
+  <!-- Blog -->
+  <section class="home-blog" id="blog">
+    <div class="home-blog-container">
+      <div class="home-blog-head fade-up">
+        <div>
+          <span class="section-kicker">Le blog Odyssa</span>
+          <h2>Préparez le prochain avant même de partir</h2>
+          <p class="home-blog-sub">Guides de destinations et conseils pratiques, publiés chaque semaine par l'équipe Odyssa.</p>
+          <ul class="home-blog-stats">
+            <!-- AUTO:HOME_BLOG_STATS:START -->
+            <li><strong><span class="home-blog-stats-prefix">+ de </span><span data-count-to="40">0</span></strong><span>articles publiés</span></li>
+            <li><strong><span class="home-blog-stats-prefix">+ de </span><span data-count-to="10">0</span></strong><span>destinations décryptées</span></li>
+        <!-- AUTO:HOME_BLOG_STATS:END -->
+          </ul>
+        </div>
+        <a href="blog/" class="home-blog-all">
+          Tous les articles
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="home-blog-grid fade-up">
+        <!-- AUTO:HOME_BLOG_CARDS:START -->
+        <a href="blog/destinations/vietnam/" class="home-blog-card">
+          <div class="home-blog-card-photo"><img src="assets/blog/destinations/vietnam/cover.webp" alt="Vietnam en Septembre : que faire et que voir ?" loading="lazy">
+            <span class="home-blog-card-tag">Vietnam</span>
+          </div>
+          <div class="home-blog-card-body">
+            <h3>Vietnam en Septembre : que faire et que voir ?</h3>
+            <p>Explorez le Vietnam pendant la saison idéale</p>
+            <span class="home-blog-card-meta">4 min de lecture</span>
+          </div>
+        </a>
+
+        <a href="blog/comment-bien-dormir-en-voyage-10-astuces-anti-fatigue/" class="home-blog-card">
+          <div class="home-blog-card-photo"><img src="assets/blog/tips/comment-bien-dormir-en-voyage-10-astuces-anti-fatigue/cover.webp" alt="Comment bien dormir en voyage : 10 astuces anti-fatigue" loading="lazy">
+            <span class="home-blog-card-tag">Bien-être</span>
+          </div>
+          <div class="home-blog-card-body">
+            <h3>Comment bien dormir en voyage : 10 astuces anti-fatigue</h3>
+            <p>Voyager sans fatigue, c'est possible</p>
+            <span class="home-blog-card-meta">3 min de lecture</span>
+          </div>
+        </a>
+
+        <a href="blog/le-guide-complet-pour-un-week-end-a-la-mer/" class="home-blog-card">
+          <div class="home-blog-card-photo"><img src="assets/blog/tips/le-guide-complet-pour-un-week-end-a-la-mer/cover.webp" alt="Le guide complet pour un week-end à la mer" loading="lazy">
+            <span class="home-blog-card-tag">Inspiration</span>
+          </div>
+          <div class="home-blog-card-body">
+            <h3>Le guide complet pour un week-end à la mer</h3>
+            <p>Découvrez comment préparer un week-end à la mer réussi</p>
+            <span class="home-blog-card-meta">2 min de lecture</span>
+          </div>
+        </a>
+
+        <a href="blog/destinations/colombie/" class="home-blog-card">
+          <div class="home-blog-card-photo"><img src="assets/blog/destinations/colombie/cover.webp" alt="Colombie en 2 semaines : que voir et que faire ?" loading="lazy">
+            <span class="home-blog-card-tag">Pays</span>
+          </div>
+          <div class="home-blog-card-body">
+            <h3>Colombie en 2 semaines : que voir et que faire ?</h3>
+            <p>Explorez la Colombie, un pays en effervescence</p>
+            <span class="home-blog-card-meta">4 min de lecture</span>
+          </div>
+        </a>
+
+        <a href="blog/comment-voyager-avec-un-animal-de-compagnie-le-guide-complet/" class="home-blog-card">
+          <div class="home-blog-card-photo"><img src="assets/blog/tips/comment-voyager-avec-un-animal-de-compagnie-le-guide-complet/cover.webp" alt="Comment voyager avec un animal de compagnie : le guide complet" loading="lazy">
+            <span class="home-blog-card-tag">Pratique</span>
+          </div>
+          <div class="home-blog-card-body">
+            <h3>Comment voyager avec un animal de compagnie : le guide complet</h3>
+            <p>Découvrez les étapes clés pour un voyage réussi avec votre animal de compagnie</p>
+            <span class="home-blog-card-meta">2 min de lecture</span>
+          </div>
+        </a>
+
+        <a href="blog/destinations/bolivie/" class="home-blog-card">
+          <div class="home-blog-card-photo"><img src="assets/blog/destinations/bolivie/cover.webp" alt="Bolivie en 2 semaines : découverte d'une terre de contrastes" loading="lazy">
+            <span class="home-blog-card-tag">Bolivie</span>
+          </div>
+          <div class="home-blog-card-body">
+            <h3>Bolivie en 2 semaines : découverte d'une terre de contrastes</h3>
+            <p>Exploration de la Bolivie, un voyage inoubliable</p>
+            <span class="home-blog-card-meta">4 min de lecture</span>
+          </div>
+        </a>
+        <!-- AUTO:HOME_BLOG_CARDS:END -->
+      </div>
+
+      <div class="home-blog-cats fade-up">
+        <a href="blog/destinations/" class="home-blog-cat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span><strong>Destinations</strong>Carnets ville par ville</span>
+        </a>
+        <a href="blog/conseils/" class="home-blog-cat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+          <span><strong>Conseils</strong>Budget, bagages, sécurité…</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="about-section">
+  <section class="about-section" id="download">
     <div class="about-container">
       <h2 class="fade-up">Prêt à simplifier vos voyages ?</h2>
       <p>Rejoignez les voyageurs qui organisent leurs aventures avec Odyssa.</p>
@@ -568,6 +913,8 @@
       </div>
       <div class="footer-links">
         <a href="blog/">Blog</a>
+        <a href="blog/destinations/">Destinations</a>
+        <a href="blog/conseils/">Conseils &amp; guides</a>
         <a href="about/">À propos</a>
         <a href="privacy-policy/">Politique de Confidentialité</a>
         <a href="terms-of-service/">Conditions d'Utilisation</a>
@@ -698,19 +1045,175 @@
     new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; updateSticky(); }, { threshold: 0 }).observe(heroSection);
     new IntersectionObserver(([e]) => { footerVisible = e.isIntersecting; updateSticky(); }, { threshold: 0 }).observe(footerSection);
 
+    // Navbar — état "scrolled" dès qu'on quitte le hero + menu mobile
+    const siteNav = document.getElementById('siteNav');
+    const navBurger = document.getElementById('navBurger');
+    const navLinks = document.getElementById('siteNavLinks');
+
+    // Le fond opaque apparaît dès les premiers pixels de scroll, sinon le
+    // contenu du hero passe visuellement sous la barre transparente
+    let navTick = false;
+    function updateNav() {
+      navTick = false;
+      siteNav.classList.toggle('scrolled', window.scrollY > 60);
+    }
+    window.addEventListener('scroll', () => {
+      if (!navTick) { navTick = true; requestAnimationFrame(updateNav); }
+    }, { passive: true });
+    updateNav();
+
+    function closeNav() {
+      navBurger.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('open');
+    }
+
+    navBurger.addEventListener('click', () => {
+      const open = navBurger.getAttribute('aria-expanded') === 'true';
+      navBurger.setAttribute('aria-expanded', String(!open));
+      navLinks.classList.toggle('open', !open);
+    });
+
+    navLinks.addEventListener('click', e => { if (e.target.tagName === 'A') closeNav(); });
+
+    // Showcase — un seul téléphone, l'écran suit le scroll
+    const showcaseTrack = document.getElementById('showcaseTrack');
+    const showcaseScreens = [...showcaseTrack.querySelectorAll('[data-screen]')];
+    const showcasePanels = [...showcaseTrack.querySelectorAll('[data-panel]')];
+    const showcaseDots = [...showcaseTrack.querySelectorAll('[data-dot]')];
+    const showcaseSteps = [...showcaseTrack.querySelectorAll('[data-step]')];
+    let showcaseActive = -1;
+
+    function setShowcase(index) {
+      if (index === showcaseActive) return;
+      // le sens du scroll pilote la direction de la rotation 3D des écrans
+      showcaseTrack.dataset.dir = index > showcaseActive ? 'down' : 'up';
+      showcaseActive = index;
+      showcaseTrack.dataset.active = String(index);
+      showcaseScreens.forEach(el => el.classList.toggle('is-active', +el.dataset.screen === index));
+      showcasePanels.forEach(el => el.classList.toggle('is-active', +el.dataset.panel === index));
+      showcaseDots.forEach(el => el.classList.toggle('is-active', +el.dataset.dot === index));
+    }
+
+    setShowcase(0);
+
+    // Le pas dont le centre traverse le milieu de l'écran devient l'écran actif
+    const showcaseObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setShowcase(+entry.target.dataset.step);
+      });
+    }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+
+    showcaseSteps.forEach(step => showcaseObserver.observe(step));
+
+    // Les puces permettent aussi de naviguer
+    showcaseDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        showcaseSteps[+dot.dataset.dot].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    const fine = window.matchMedia('(pointer: fine)').matches;
+    const stillOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Parallaxe 3D à la souris — le téléphone suit le curseur
+    function attachTilt(container, target, maxDeg) {
+      if (!fine || !stillOk || !container || !target) return;
+      let raf = null, tx = 0, ty = 0;
+
+      container.addEventListener('pointermove', e => {
+        const r = container.getBoundingClientRect();
+        tx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+        ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
+        if (!raf) raf = requestAnimationFrame(apply);
+      });
+
+      container.addEventListener('pointerleave', () => {
+        tx = ty = 0;
+        if (!raf) raf = requestAnimationFrame(apply);
+      });
+
+      function apply() {
+        raf = null;
+        target.style.setProperty('--mouse-ry', (tx * maxDeg).toFixed(2) + 'deg');
+        target.style.setProperty('--mouse-rx', (-ty * maxDeg).toFixed(2) + 'deg');
+      }
+    }
+
+    const showcaseScene = document.getElementById('showcaseScene');
+    attachTilt(showcaseScene, showcaseScene.querySelector('.showcase-rig'), 9);
+
+    const heroMockup = document.getElementById('heroMockup');
+    attachTilt(heroMockup, heroMockup.querySelector('.phone-frame'), 7);
+
+    // Compteurs animés
+    const countObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        countObserver.unobserve(entry.target);
+        const el = entry.target;
+        const to = parseFloat(el.dataset.countTo);
+        const decimals = parseInt(el.dataset.countDecimals || '0', 10);
+        const format = v => v.toFixed(decimals).replace('.', ',');
+
+        if (!stillOk) { el.textContent = format(to); return; }
+
+        const start = performance.now();
+        const duration = 1100;
+        (function tick(now) {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = format(to * eased);
+          if (p < 1) requestAnimationFrame(tick);
+        })(start);
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll('[data-count-to]').forEach(el => countObserver.observe(el));
+
+    // Sélecteur « Pour qui »
+    const whoTabs = [...document.querySelectorAll('[data-who]')].filter(el => el.tagName === 'BUTTON');
+    const whoPanels = [...document.querySelectorAll('.forwhom-panel')];
+    const whoSwitch = document.querySelector('.forwhom-switch');
+
+    function selectWho(index) {
+      whoTabs.forEach((tab, i) => {
+        const on = i === index;
+        tab.setAttribute('aria-selected', String(on));
+        tab.tabIndex = on ? 0 : -1;
+      });
+      whoPanels.forEach((panel, i) => {
+        panel.classList.toggle('is-active', i === index);
+        panel.hidden = i !== index;
+      });
+      whoSwitch.style.setProperty('--who', String(index));
+    }
+
+    whoTabs.forEach((tab, i) => tab.addEventListener('click', () => selectWho(i)));
+
+    whoSwitch.addEventListener('keydown', e => {
+      const current = whoTabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+      let next = null;
+      if (e.key === 'ArrowRight') next = (current + 1) % whoTabs.length;
+      if (e.key === 'ArrowLeft') next = (current - 1 + whoTabs.length) % whoTabs.length;
+      if (next === null) return;
+      e.preventDefault();
+      selectWho(next);
+      whoTabs[next].focus();
+    });
+
+    selectWho(0);
+
     // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
 
-    document.querySelectorAll('.screenshot-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
+    document.getElementById('showcaseDevice').addEventListener('click', () => {
+      const img = showcaseScreens[showcaseActive];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
     });
 
     function closeLightbox() {
@@ -734,28 +1237,15 @@
       }
     });
 
-    // Adaptive favicon: dark logo on light theme, white logo on dark theme
+    // Favicon adaptatif pour les onglets du navigateur uniquement.
+    // Le href statique (pictogramme sombre) reste celui que Google crawle :
+    // il ne faut jamais basculer sur la version blanche par défaut.
     (function() {
       const favicon = document.getElementById('favicon');
       const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
       function updateFavicon(isDark) {
-        if (isDark) {
-          favicon.href = 'favicon.png';
-          return;
-        }
-        const img = new Image();
-        img.crossOrigin = 'anonymous';
-        img.onload = function() {
-          const canvas = document.createElement('canvas');
-          canvas.width = img.width;
-          canvas.height = img.height;
-          const ctx = canvas.getContext('2d');
-          ctx.filter = 'invert(1)';
-          ctx.drawImage(img, 0, 0);
-          favicon.href = canvas.toDataURL('image/png');
-        };
-        img.src = 'favicon.png';
+        favicon.href = isDark ? '/favicon-dark.png' : '/favicon.png';
       }
 
       updateFavicon(darkQuery.matches);
