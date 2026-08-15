@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+  Page de redirection des liens createurs. A COPIER dans le depot du site
+  odyssa-app.com (GitHub Pages), a l'emplacement /go/index.html.
+
+  Elle existe pour une seule raison : le lien qu'un tiktokeur met en bio ne doit
+  pas exhiber le nom du projet Supabase. Le lien public devient donc
+
+      https://odyssa-app.com/go/?c=MARIE
+
+  La page detecte le systeme, redirige vers la bonne fiche store avec les
+  parametres de campagne, et previent l'edge function `go` en tache de fond pour
+  le comptage. L'appel a Supabase reste dans les coulisses, l'utilisateur ne voit
+  jamais son URL.
+
+  ATTENTION : la construction des URL store est dupliquee ici et dans
+  supabase/functions/go/index.ts. Les deux runtimes n'ont aucun code en commun.
+  Toute modification d'un identifiant d'app ou d'un parametre de campagne doit
+  etre reportee dans les deux fichiers. Voir docs/CREATOR_LINKS.md.
+-->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Odyssa</title>
+<style>
+  :root {
+    --primary: #3B82F6;
+    --background: #F5F5F5;
+    --surface: #FFFFFF;
+    --text: #000000;
+    --text-muted: #666666;
+    --border: #E5E5E5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--background);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-align: center;
+  }
+  .card {
+    width: 100%;
+    max-width: 340px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 24px;
+  }
+  h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; margin: 0 0 8px; }
+  p { font-size: 15px; color: var(--text-muted); margin: 0 0 24px; line-height: 1.45; }
+  .spinner {
+    width: 28px; height: 28px; margin: 0 auto 20px;
+    border: 3px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 3s; } }
+  a.store {
+    display: block;
+    padding: 14px 20px;
+    margin-top: 10px;
+    border-radius: 999px;
+    background: var(--primary);
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  a.store.secondary { background: transparent; color: var(--primary); border: 1px solid var(--border); }
+  .fallback { display: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="spinner" id="spinner"></div>
+  <h1 id="title">Odyssa</h1>
+  <p id="subtitle">Redirection vers le store...</p>
+  <div class="fallback" id="fallback">
+    <a class="store" id="link-ios" href="#">App Store</a>
+    <a class="store secondary" id="link-android" href="#">Google Play</a>
+  </div>
+</div>
+
+<noscript>
+  <style>.spinner { display: none; } .fallback { display: block; }</style>
+</noscript>
+
+<script>
+(function () {
+  'use strict';
+
+  var IOS_APP_ID = '6758266472';
+  var ANDROID_PACKAGE = 'app.odyssa.travel';
+
+  // Jeton fournisseur App Store Connect. Il n'a rien de secret : il figure en
+  // clair dans tout lien de campagne genere par la console. A remplir avec la
+  // meme valeur que le secret APPLE_PROVIDER_TOKEN de l'edge function, sans
+  // quoi Apple ignore le parametre de campagne.
+  var APPLE_PROVIDER_TOKEN = '128446369';
+
+  var BEACON_URL = 'https://vyjqhkfdhweumbuzkvda.supabase.co/functions/v1/go';
+
+  var TEXT = {
+    fr: { title: 'Odyssa', subtitle: 'Redirection vers le store...', manual: 'Si rien ne se passe :' },
+    en: { title: 'Odyssa', subtitle: 'Taking you to the store...', manual: 'If nothing happens:' }
+  };
+
+  var params = new URLSearchParams(window.location.search);
+  var code = (params.get('c') || '').replace(/[^a-zA-Z0-9]/g, '').toUpperCase().slice(0, 20);
+  var source = (params.get('s') || '').slice(0, 32);
+
+  var lang = (navigator.language || 'fr').slice(0, 2) === 'fr' ? 'fr' : 'en';
+  var text = TEXT[lang];
+  document.documentElement.lang = lang;
+  document.getElementById('title').textContent = text.title;
+  document.getElementById('subtitle').textContent = text.subtitle;
+
+  var ua = navigator.userAgent || '';
+  // iPadOS 13+ se declare « Macintosh » : le point tactile est ce qui le
+  // distingue d'un vrai Mac.
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+              (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+
+  function appStoreUrl() {
+    var url = 'https://apps.apple.com/app/odyssa/id' + IOS_APP_ID + '?mt=8';
+    if (code && APPLE_PROVIDER_TOKEN) {
+      url += '&pt=' + encodeURIComponent(APPLE_PROVIDER_TOKEN) +
+             '&ct=' + encodeURIComponent(code.toLowerCase());
+    }
+    return url;
+  }
+
+  function playStoreUrl() {
+    var url = 'https://play.google.com/store/apps/details?id=' + ANDROID_PACKAGE;
+    if (code) {
+      // Play attend les parametres UTM encodes une fois, dans un unique
+      // `referrer`. C'est `utm_campaign` que la console decoupe par createur.
+      url += '&referrer=' + encodeURIComponent(
+        'utm_source=tiktok&utm_medium=creator&utm_campaign=' + code.toLowerCase()
+      );
+    }
+    return url;
+  }
+
+  document.getElementById('link-ios').href = appStoreUrl();
+  document.getElementById('link-android').href = playStoreUrl();
+
+  // Comptage en tache de fond. `no-cors` evite tout preflight, `keepalive`
+  // laisse la requete se terminer alors que la page est deja en train de
+  // partir vers le store. On ne lit pas la reponse et on n'attend pas :
+  // un clic non compte ne doit jamais retarder la redirection.
+  if (code) {
+    try {
+      fetch(BEACON_URL + '?beacon=1&c=' + encodeURIComponent(code) +
+            (source ? '&s=' + encodeURIComponent(source) : ''), {
+        mode: 'no-cors',
+        keepalive: true,
+        cache: 'no-store'
+      }).catch(function () {});
+    } catch (e) { /* navigateur sans fetch : tant pis pour la statistique */ }
+  }
+
+  if (isIOS || isAndroid) {
+    // `replace` et non `href` : le bouton retour du navigateur doit ramener a
+    // TikTok, pas rejouer la redirection en boucle.
+    window.location.replace(isIOS ? appStoreUrl() : playStoreUrl());
+    return;
+  }
+
+  // Ni iPhone ni Android, donc un ordinateur : personne a rediriger vers un
+  // store mobile, on montre les deux fiches.
+  document.getElementById('spinner').style.display = 'none';
+  document.getElementById('subtitle').textContent = text.manual;
+  document.getElementById('fallback').style.display = 'block';
+})();
+</script>
+</body>
+</html>
