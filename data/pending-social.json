@@ -1,35 +1,35 @@
 [
   {
     "type": "destination",
-    "slug": "vietnam",
-    "title": "Vietnam en Septembre : que faire et que voir ?",
-    "excerpt": "Explorez le Vietnam pendant la saison idéale",
-    "tag": "Vietnam",
-    "country": "Vietnam",
-    "url": "https://odyssa-app.com/blog/destinations/vietnam/",
-    "image": "https://odyssa-app.com/assets/blog/destinations/vietnam/cover.webp",
-    "date": "2026-08-10"
+    "slug": "la-reunion",
+    "title": "La Réunion en Septembre : que voir et que faire en 7 jours ?",
+    "excerpt": "La Réunion en Septembre, un paradis tropical à découvrir",
+    "tag": "France",
+    "country": "France",
+    "url": "https://odyssa-app.com/blog/destinations/la-reunion/",
+    "image": "https://odyssa-app.com/assets/blog/destinations/la-reunion/cover.webp",
+    "date": "2026-08-17"
   },
   {
     "type": "tip",
-    "slug": "le-guide-complet-pour-un-week-end-a-la-mer",
-    "title": "Le guide complet pour un week-end à la mer",
-    "excerpt": "Découvrez comment préparer un week-end à la mer réussi",
-    "tag": "Inspiration",
+    "slug": "organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles",
+    "title": "Organiser un voyage de dernière minute sans stress : 5 conseils clés",
+    "excerpt": "Partez en voyage sans stress avec ces conseils de dernière minute",
+    "tag": "Organisation",
     "country": "",
-    "url": "https://odyssa-app.com/blog/le-guide-complet-pour-un-week-end-a-la-mer/",
-    "image": "https://odyssa-app.com/assets/blog/tips/le-guide-complet-pour-un-week-end-a-la-mer/cover.webp",
-    "date": "2026-08-10"
+    "url": "https://odyssa-app.com/blog/organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles/",
+    "image": "https://odyssa-app.com/assets/blog/tips/organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles/cover.webp",
+    "date": "2026-08-17"
   },
   {
     "type": "tip",
-    "slug": "comment-bien-dormir-en-voyage-10-astuces-anti-fatigue",
-    "title": "Comment bien dormir en voyage : 10 astuces anti-fatigue",
-    "excerpt": "Voyager sans fatigue, c'est possible",
-    "tag": "Bien-être",
+    "slug": "comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe",
+    "title": "Comment choisir le meilleur hébergement pour un voyage en groupe ?",
+    "excerpt": "Sélectionnez l'hébergement parfait pour votre voyage en groupe",
+    "tag": "Organisation",
     "country": "",
-    "url": "https://odyssa-app.com/blog/comment-bien-dormir-en-voyage-10-astuces-anti-fatigue/",
-    "image": "https://odyssa-app.com/assets/blog/tips/comment-bien-dormir-en-voyage-10-astuces-anti-fatigue/cover.webp",
-    "date": "2026-08-10"
+    "url": "https://odyssa-app.com/blog/comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe/",
+    "image": "https://odyssa-app.com/assets/blog/tips/comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe/cover.webp",
+    "date": "2026-08-17"
   }
 ]

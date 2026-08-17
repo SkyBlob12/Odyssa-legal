@@ -2,27 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://odyssa-app.com/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/destinations/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/conseils/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/destinations/la-reunion/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/destinations/vietnam/</loc>
@@ -99,6 +105,18 @@
   <url>
     <loc>https://odyssa-app.com/blog/destinations/maroc/</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
