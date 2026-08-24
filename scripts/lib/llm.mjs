@@ -6,6 +6,12 @@ import { log } from './util.mjs';
 const MODEL = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
 const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 
+// Le tier gratuit plafonne à 8000 tokens/minute et Groq compte le budget de sortie
+// RÉSERVÉ (max_completion_tokens) dans ce calcul : prompt + budget doit tenir sous la
+// limite, sinon la requête est refusée en 413 avant même d'être traitée.
+const MAX_OUT = Number(process.env.GROQ_MAX_TOKENS) || 6000;
+const MIN_OUT = 2500; // en dessous l'article serait tronqué : mieux vaut échouer franchement
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // Codes transitoires qui méritent un nouvel essai.
 const RETRYABLE = new Set([408, 429, 500, 502, 503, 504]);
@@ -48,18 +54,22 @@ CONCURRENCE : Odyssa est une application de planification de voyage. Ne recomman
  * Réessaie sur erreurs transitoires (429/5xx) en respectant l'en-tête retry-after.
  */
 async function callLLM(prompt, key, temperature = 0.85) {
-  const body = JSON.stringify({
+  const buildBody = (maxOut) => JSON.stringify({
     model: MODEL,
     messages: [{
       role: 'user',
       content: `${prompt}\n\nRéponds UNIQUEMENT avec un objet JSON valide conforme à la structure demandée, sans aucun texte avant ou après.`,
     }],
     temperature,
-    max_tokens: 8192,
+    max_completion_tokens: maxOut,
+    // Les modèles à raisonnement (gpt-oss) prélèvent leurs tokens de réflexion sur le
+    // même budget : effort minimal pour laisser la place à l'article.
+    ...(MODEL.includes('gpt-oss') ? { reasoning_effort: 'low' } : {}),
     response_format: { type: 'json_object' },
   });
 
-  const MAX_ATTEMPTS = 5;
+  let maxOut = MAX_OUT;
+  const MAX_ATTEMPTS = 6;
   let lastErr;
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     let res;
@@ -67,7 +77,7 @@ async function callLLM(prompt, key, temperature = 0.85) {
       res = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
-        body,
+        body: buildBody(maxOut),
       });
     } catch (e) {
       // erreur réseau → on retente
@@ -89,10 +99,27 @@ async function callLLM(prompt, key, temperature = 0.85) {
 
     const detail = await res.text();
     lastErr = new Error(`Groq ${res.status} (${MODEL}): ${detail}`);
+    // 413 : prompt + budget de sortie dépassent la limite tokens/minute du compte.
+    // On rabote le budget juste ce qu'il faut et on retente.
+    if (res.status === 413) {
+      const limit = Number(/Limit (\d+)/.exec(detail)?.[1]);
+      const requested = Number(/Requested (\d+)/.exec(detail)?.[1]);
+      const shrunk = limit && requested
+        ? maxOut - (requested - limit) - 200
+        : Math.floor(maxOut * 0.75);
+      if (shrunk < MIN_OUT) {
+        throw new Error(`${lastErr.message}
+Prompt trop long pour la limite tokens/minute du compte Groq : passer au tier Dev ou raccourcir l'article demandé.`);
+      }
+      log(`Groq 413 : budget de sortie ramené à ${shrunk} tokens, nouvel essai`);
+      maxOut = shrunk;
+      continue;
+    }
+
     if (!RETRYABLE.has(res.status)) throw lastErr; // erreur définitive (clé invalide, quota épuisé, etc.)
 
     const retryAfter = Number(res.headers.get('retry-after'));
-    const wait = retryAfter > 0 ? Math.min(retryAfter * 1000, 30000) : attempt * 3000;
+    const wait = retryAfter > 0 ? Math.min(retryAfter * 1000, 90000) : attempt * 5000;
     log(`Groq ${res.status} — nouvel essai ${attempt}/${MAX_ATTEMPTS} dans ${Math.round(wait / 1000)}s`);
     await sleep(wait);
   }
