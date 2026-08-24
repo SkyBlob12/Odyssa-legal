@@ -1,35 +1,35 @@
 [
   {
     "type": "destination",
-    "slug": "la-reunion",
-    "title": "La Réunion en Septembre : que voir et que faire en 7 jours ?",
-    "excerpt": "La Réunion en Septembre, un paradis tropical à découvrir",
-    "tag": "France",
-    "country": "France",
-    "url": "https://odyssa-app.com/blog/destinations/la-reunion/",
-    "image": "https://odyssa-app.com/assets/blog/destinations/la-reunion/cover.webp",
-    "date": "2026-08-17"
+    "slug": "afrique-du-sud",
+    "title": "Afrique du Sud en septembre : quel climat, que voir et comment s'organiser ?",
+    "excerpt": "Septembre, le printemps s'installe en Afrique du Sud : météo clémente, safaris riches et foule maîtrisée. Suivez notre guide complet.",
+    "tag": "Afrique du Sud",
+    "country": "Afrique du Sud",
+    "url": "https://odyssa-app.com/blog/destinations/afrique-du-sud/",
+    "image": "https://odyssa-app.com/assets/blog/destinations/afrique-du-sud/cover.webp",
+    "date": "2026-08-24"
   },
   {
     "type": "tip",
-    "slug": "organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles",
-    "title": "Organiser un voyage de dernière minute sans stress : 5 conseils clés",
-    "excerpt": "Partez en voyage sans stress avec ces conseils de dernière minute",
-    "tag": "Organisation",
+    "slug": "les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang",
+    "title": "Les 5 erreurs à éviter lors de la planification d'un voyage à l'étranger",
+    "excerpt": "Évitez les pièges classiques de la préparation et partez serein grâce à nos conseils pratiques et éprouvés.",
+    "tag": "Pratique",
     "country": "",
-    "url": "https://odyssa-app.com/blog/organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles/",
-    "image": "https://odyssa-app.com/assets/blog/tips/organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles/cover.webp",
-    "date": "2026-08-17"
+    "url": "https://odyssa-app.com/blog/les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang/",
+    "image": "https://odyssa-app.com/assets/blog/tips/les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang/cover.webp",
+    "date": "2026-08-24"
   },
   {
     "type": "tip",
-    "slug": "comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe",
-    "title": "Comment choisir le meilleur hébergement pour un voyage en groupe ?",
-    "excerpt": "Sélectionnez l'hébergement parfait pour votre voyage en groupe",
-    "tag": "Organisation",
+    "slug": "pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v",
+    "title": "Pourquoi inclure des activités de plein air dans votre itinéraire de voyage : 7 raisons concrètes",
+    "excerpt": "Les activités de plein air transforment un voyage : santé, immersion, budget maîtrisé… voici comment les ajouter à votre itinéraire.",
+    "tag": "Inspiration",
     "country": "",
-    "url": "https://odyssa-app.com/blog/comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe/",
-    "image": "https://odyssa-app.com/assets/blog/tips/comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe/cover.webp",
-    "date": "2026-08-17"
+    "url": "https://odyssa-app.com/blog/pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v/",
+    "image": "https://odyssa-app.com/assets/blog/tips/pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v/cover.webp",
+    "date": "2026-08-24"
   }
 ]
