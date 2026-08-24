@@ -1,7 +1,9 @@
 import { log } from './util.mjs';
 
 // Fournisseur : Groq (API compatible OpenAI), tier gratuit généreux.
-const MODEL = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+// llama-3.3-70b-versatile a été arrêté par Groq le 16/08/2026 (hors contrats entreprise).
+// Alternative possible : 'qwen/qwen3.6-27b'.
+const MODEL = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
 const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

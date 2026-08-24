@@ -36,7 +36,7 @@ Récupère l'**ID de la base** (dans l'URL : `notion.so/<workspace>/<DATABASE_ID
 ### c) Secrets GitHub
 Repo → **Settings → Secrets and variables → Actions → New repository secret**, ajoute :
 `GROQ_API_KEY`, `UNSPLASH_KEY`, `NOTION_TOKEN`, `NOTION_DB_ID`.
-(Optionnel : variable `GROQ_MODEL` pour changer de modèle, défaut `llama-3.3-70b-versatile`.)
+(Optionnel : variable `GROQ_MODEL` pour changer de modèle, défaut `openai/gpt-oss-120b`.)
 
 ### d) GitHub Pages
 Vérifie que Pages déploie depuis la branche `main` (Settings → Pages). Merger une PR = publication.
@@ -80,4 +80,5 @@ En CI : onglet **Actions → « Blog - backfill images conseils » → Run workf
 - **Photos** : Unsplash, converties en WebP (`sharp`), avec attribution automatique. Les destinations ont une couverture + galerie + photo pleine largeur ; les conseils ont une seule photo de couverture (le modèle fournit un mot-clé de recherche `photoQuery` en anglais pour la pertinence).
 - **Dédoublonnage** : un slug déjà présent dans `data/destinations.json` / `data/tips.json` est ignoré.
 - **Templates** : `blog/_templates/` (ignorés par GitHub Pages car préfixés `_`).
-- **Modèle IA** : Groq, `llama-3.3-70b-versatile` par défaut (variable `GROQ_MODEL` pour changer). API compatible OpenAI, sortie JSON.
+- **Modèle IA** : Groq, `openai/gpt-oss-120b` par défaut (variable `GROQ_MODEL` pour changer). API compatible OpenAI, sortie JSON.
+  Note : `llama-3.3-70b-versatile` et `llama-3.1-8b-instant` ont été arrêtés par Groq le 16/08/2026 pour les tiers gratuit/développeur.
