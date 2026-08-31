@@ -1,35 +1,35 @@
 [
   {
     "type": "destination",
-    "slug": "afrique-du-sud",
-    "title": "Afrique du Sud en septembre : quel climat, que voir et comment s'organiser ?",
-    "excerpt": "Septembre, le printemps s'installe en Afrique du Sud : météo clémente, safaris riches et foule maîtrisée. Suivez notre guide complet.",
-    "tag": "Afrique du Sud",
-    "country": "Afrique du Sud",
-    "url": "https://odyssa-app.com/blog/destinations/afrique-du-sud/",
-    "image": "https://odyssa-app.com/assets/blog/destinations/afrique-du-sud/cover.webp",
-    "date": "2026-08-24"
+    "slug": "jordanie",
+    "title": "Jordanie en octobre : quel itinéraire pour profiter du climat doux et des sites phares ?",
+    "excerpt": "Octobre en Jordanie : climat doux, sites ouverts, conseils pratiques pour un séjour inoubliable.",
+    "tag": "Jordanie",
+    "country": "Jordanie",
+    "url": "https://odyssa-app.com/blog/destinations/jordanie/",
+    "image": "https://odyssa-app.com/assets/blog/destinations/jordanie/cover.webp",
+    "date": "2026-08-31"
   },
   {
     "type": "tip",
-    "slug": "les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang",
-    "title": "Les 5 erreurs à éviter lors de la planification d'un voyage à l'étranger",
-    "excerpt": "Évitez les pièges classiques de la préparation et partez serein grâce à nos conseils pratiques et éprouvés.",
-    "tag": "Pratique",
+    "slug": "comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et",
+    "title": "Comment créer un itinéraire de voyage personnalisé avec Odyssa en 5 étapes concrètes",
+    "excerpt": "Découvrez comment Odyssa transforme vos envies en itinéraire précis, adapté à votre budget et à votre style de voyage.",
+    "tag": "Organisation",
     "country": "",
-    "url": "https://odyssa-app.com/blog/les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang/",
-    "image": "https://odyssa-app.com/assets/blog/tips/les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang/cover.webp",
-    "date": "2026-08-24"
+    "url": "https://odyssa-app.com/blog/comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et/",
+    "image": "https://odyssa-app.com/assets/blog/tips/comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et/cover.webp",
+    "date": "2026-08-31"
   },
   {
     "type": "tip",
-    "slug": "pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v",
-    "title": "Pourquoi inclure des activités de plein air dans votre itinéraire de voyage : 7 raisons concrètes",
-    "excerpt": "Les activités de plein air transforment un voyage : santé, immersion, budget maîtrisé… voici comment les ajouter à votre itinéraire.",
-    "tag": "Inspiration",
+    "slug": "pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon",
+    "title": "Pourquoi le voyage lent offre une expérience authentique et éco-responsable",
+    "excerpt": "Le voyage lent réduit votre impact environnemental tout en vous plongeant au cœur des cultures locales.",
+    "tag": "Éco-voyage",
     "country": "",
-    "url": "https://odyssa-app.com/blog/pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v/",
-    "image": "https://odyssa-app.com/assets/blog/tips/pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v/cover.webp",
-    "date": "2026-08-24"
+    "url": "https://odyssa-app.com/blog/pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon/",
+    "image": "https://odyssa-app.com/assets/blog/tips/pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon/cover.webp",
+    "date": "2026-08-31"
   }
 ]
