@@ -191,37 +191,37 @@
       "title": "Les 5 erreurs à éviter lors de la planification d'un voyage à l'étranger",
       "tag": "Pratique",
       "angle": "Ce guide pratique mettra en lumière les erreurs courantes que les voyageurs commettent lors de la planification de leur voyage et fournira des conseils pour les éviter.",
-      "used": false
+      "used": true
     },
     {
       "title": "Pourquoi inclure des activités de plein air dans votre itinéraire de voyage",
       "tag": "Inspiration",
       "angle": "Cet article expliquera les bienfaits des activités de plein air pour les voyageurs et proposera des idées pour intégrer ces expériences dans différents types de voyages.",
-      "used": false
+      "used": true
     },
     {
       "title": "Comment créer un itinéraire de voyage personnalisé avec Odyssa",
       "tag": "Organisation",
       "angle": "Cette étude de cas montrera comment utiliser Odyssa pour concevoir un itinéraire de voyage sur mesure, en fonction des intérêts, du budget et du style de voyage de chacun.",
-      "used": false
+      "used": true
     },
     {
       "title": "Les bénéfices du voyage lent pour une expérience plus authentique",
       "tag": "Éco-voyage",
       "angle": "Cet article explorera les avantages du voyage lent, notamment en termes d'impact environnemental, d'immersion culturelle et de connexion avec les communautés locales.",
-      "used": false
+      "used": true
     },
     {
       "title": "Comment gérer les problèmes de santé mentale lors d'un voyage",
       "tag": "Bien-être",
       "angle": "Ce guide sensible et informatif fournira des ressources et des conseils pour gérer les problèmes de santé mentale pendant les voyages, y compris la préparation, la reconnaissance des signes de détresse et les estratégies de coping.",
-      "used": false
+      "used": true
     },
     {
       "title": "Les meilleures destinations pour un voyage culinaire en Europe",
       "tag": "Gastronomie",
       "angle": "Cet article présentera un aperçu des régions et des villes européennes qui offrent les expériences culinaires les plus uniques et les plus délicieuses, avec des recommandations pour les restaurants, les marchés et les produits locaux.",
-      "used": false
+      "used": true
     },
     {
       "title": "Comment voyager avec un animal de compagnie : les règles et les conseils",
@@ -239,6 +239,66 @@
       "title": "Comment intégrer des activités de volontariat dans votre voyage",
       "tag": "Inspiration",
       "angle": "Cet article explorera les opportunités de volontariat à l'étranger, les avantages pour les communautés locales et les voyageurs, et les étapes pour trouver et s'engager dans des projets de volontariat significatifs pendant son voyage.",
+      "used": false
+    },
+    {
+      "title": "Comment optimiser les escales longues pour découvrir une ville en 48 h",
+      "tag": "Organisation",
+      "angle": "Méthodes pour transformer chaque escale en mini‑séjour avec transport, visites et repas rapides.",
+      "used": false
+    },
+    {
+      "title": "Pourquoi choisir le train de nuit en Europe : 5 avantages pratiques",
+      "tag": "Budget",
+      "angle": "Analyse des économies, du confort, de la réduction de l'empreinte carbone et des astuces de réservation.",
+      "used": false
+    },
+    {
+      "title": "Le guide complet pour préparer un trek en montagne sans équipement lourd",
+      "tag": "Astuces",
+      "angle": "Conseils détaillés sur la sélection de matériel léger, les vêtements techniques et les techniques de charge.",
+      "used": false
+    },
+    {
+      "title": "Comment créer un carnet de voyage numérique collaboratif pour un groupe d'amis",
+      "tag": "Pratique",
+      "angle": "Étapes pour structurer, partager et enrichir un journal de voyage en ligne via Odyssa.",
+      "used": false
+    },
+    {
+      "title": "5 idées d'activités locales à faire avec des enfants de 5 à 10 ans",
+      "tag": "Famille",
+      "angle": "Propositions d'ateliers, musées interactifs et jeux de plein air adaptés aux familles.",
+      "used": false
+    },
+    {
+      "title": "Comment gérer son budget alimentation à l'étranger : astuces et calculs précis",
+      "tag": "Budget",
+      "angle": "Stratégies pour estimer les dépenses alimentaires, profiter des marchés et éviter les frais cachés.",
+      "used": false
+    },
+    {
+      "title": "Le guide complet pour voyager en vélo à travers les vignobles français",
+      "tag": "Inspiration",
+      "angle": "Itinéraires, hébergements, dégustations et conseils de sécurité pour un périple cycliste gourmand.",
+      "used": false
+    },
+    {
+      "title": "Comment préparer son corps aux changements d'altitude en voyage montagne",
+      "tag": "Bien-être",
+      "angle": "Exercices, hydratation et techniques de respiration pour éviter le mal d'altitude.",
+      "used": false
+    },
+    {
+      "title": "Pourquoi intégrer des ateliers culinaires locaux à votre itinéraire de voyage",
+      "tag": "Gastronomie",
+      "angle": "Valeur culturelle, apprentissage de recettes authentiques et rencontres avec des chefs locaux.",
+      "used": false
+    },
+    {
+      "title": "Comment réduire les déchets plastiques pendant un road‑trip en van",
+      "tag": "Éco‑voyage",
+      "angle": "Solutions concrètes pour le ravitaillement, le nettoyage et le recyclage en déplacement.",
       "used": false
     }
   ]

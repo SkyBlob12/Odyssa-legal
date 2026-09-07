@@ -1,5 +1,65 @@
 [
   {
+    "slug": "les-6-destinations-europeennes-pour-un-voyage-culinaire",
+    "title": "Les 6 destinations européennes pour un voyage culinaire",
+    "tag": "Gastronomie",
+    "tagClass": "",
+    "excerpt": "Partez à la découverte des saveurs européennes : marchés, restaurants et produits locaux à ne pas manquer.",
+    "readingTime": "2 min de lecture",
+    "cover": "assets/blog/tips/les-6-destinations-europeennes-pour-un-voyage-culinaire/cover.webp",
+    "date": "2026-09-07"
+  },
+  {
+    "slug": "comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat",
+    "title": "Comment gérer les problèmes de santé mentale pendant un voyage : 7 stratégies concrètes",
+    "tag": "Bien-être",
+    "tagClass": "",
+    "excerpt": "7 stratégies concrètes pour protéger votre santé mentale en voyage, de la planification à la gestion du stress sur place.",
+    "readingTime": "2 min de lecture",
+    "cover": "assets/blog/tips/comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat/cover.webp",
+    "date": "2026-09-07"
+  },
+  {
+    "slug": "pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon",
+    "title": "Pourquoi le voyage lent offre une expérience authentique et éco-responsable",
+    "tag": "Éco-voyage",
+    "tagClass": "",
+    "excerpt": "Le voyage lent réduit votre impact environnemental tout en vous plongeant au cœur des cultures locales.",
+    "readingTime": "2 min de lecture",
+    "cover": "assets/blog/tips/pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon/cover.webp",
+    "date": "2026-08-31"
+  },
+  {
+    "slug": "comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et",
+    "title": "Comment créer un itinéraire de voyage personnalisé avec Odyssa en 5 étapes concrètes",
+    "tag": "Organisation",
+    "tagClass": "",
+    "excerpt": "Découvrez comment Odyssa transforme vos envies en itinéraire précis, adapté à votre budget et à votre style de voyage.",
+    "readingTime": "3 min de lecture",
+    "cover": "assets/blog/tips/comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et/cover.webp",
+    "date": "2026-08-31"
+  },
+  {
+    "slug": "pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v",
+    "title": "Pourquoi inclure des activités de plein air dans votre itinéraire de voyage : 7 raisons concrètes",
+    "tag": "Inspiration",
+    "tagClass": "",
+    "excerpt": "Les activités de plein air transforment un voyage : santé, immersion, budget maîtrisé… voici comment les ajouter à votre itinéraire.",
+    "readingTime": "3 min de lecture",
+    "cover": "assets/blog/tips/pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v/cover.webp",
+    "date": "2026-08-24"
+  },
+  {
+    "slug": "les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang",
+    "title": "Les 5 erreurs à éviter lors de la planification d'un voyage à l'étranger",
+    "tag": "Pratique",
+    "tagClass": "",
+    "excerpt": "Évitez les pièges classiques de la préparation et partez serein grâce à nos conseils pratiques et éprouvés.",
+    "readingTime": "3 min de lecture",
+    "cover": "assets/blog/tips/les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang/cover.webp",
+    "date": "2026-08-24"
+  },
+  {
     "slug": "comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe",
     "title": "Comment choisir le meilleur hébergement pour un voyage en groupe ?",
     "tag": "Organisation",

@@ -1,5 +1,35 @@
 [
   {
+    "slug": "patagonie-chilienne",
+    "title": "Patagonie Chili en octobre : quel itinéraire et que prévoir ?",
+    "country": "Chili",
+    "tag": "Chili",
+    "excerpt": "Octobre en Patagonie chilienne : climat idéal, moins de touristes, itinéraires sur mesure et conseils d'experts.",
+    "readingTime": "4 min de lecture",
+    "cover": "assets/blog/destinations/patagonie-chilienne/cover.webp",
+    "date": "2026-09-07"
+  },
+  {
+    "slug": "jordanie",
+    "title": "Jordanie en octobre : quel itinéraire pour profiter du climat doux et des sites phares ?",
+    "country": "Jordanie",
+    "tag": "Jordanie",
+    "excerpt": "Octobre en Jordanie : climat doux, sites ouverts, conseils pratiques pour un séjour inoubliable.",
+    "readingTime": "5 min de lecture",
+    "cover": "assets/blog/destinations/jordanie/cover.webp",
+    "date": "2026-08-31"
+  },
+  {
+    "slug": "afrique-du-sud",
+    "title": "Afrique du Sud en septembre : quel climat, que voir et comment s'organiser ?",
+    "country": "Afrique du Sud",
+    "tag": "Afrique du Sud",
+    "excerpt": "Septembre, le printemps s'installe en Afrique du Sud : météo clémente, safaris riches et foule maîtrisée. Suivez notre guide complet.",
+    "readingTime": "6 min de lecture",
+    "cover": "assets/blog/destinations/afrique-du-sud/cover.webp",
+    "date": "2026-08-24"
+  },
+  {
     "slug": "la-reunion",
     "title": "La Réunion en Septembre : que voir et que faire en 7 jours ?",
     "country": "France",

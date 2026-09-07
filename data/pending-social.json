@@ -1,35 +1,35 @@
 [
   {
     "type": "destination",
-    "slug": "la-reunion",
-    "title": "La Réunion en Septembre : que voir et que faire en 7 jours ?",
-    "excerpt": "La Réunion en Septembre, un paradis tropical à découvrir",
-    "tag": "France",
-    "country": "France",
-    "url": "https://odyssa-app.com/blog/destinations/la-reunion/",
-    "image": "https://odyssa-app.com/assets/blog/destinations/la-reunion/cover.webp",
-    "date": "2026-08-17"
+    "slug": "patagonie-chilienne",
+    "title": "Patagonie Chili en octobre : quel itinéraire et que prévoir ?",
+    "excerpt": "Octobre en Patagonie chilienne : climat idéal, moins de touristes, itinéraires sur mesure et conseils d'experts.",
+    "tag": "Chili",
+    "country": "Chili",
+    "url": "https://odyssa-app.com/blog/destinations/patagonie-chilienne/",
+    "image": "https://odyssa-app.com/assets/blog/destinations/patagonie-chilienne/cover.webp",
+    "date": "2026-09-07"
   },
   {
     "type": "tip",
-    "slug": "organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles",
-    "title": "Organiser un voyage de dernière minute sans stress : 5 conseils clés",
-    "excerpt": "Partez en voyage sans stress avec ces conseils de dernière minute",
-    "tag": "Organisation",
+    "slug": "comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat",
+    "title": "Comment gérer les problèmes de santé mentale pendant un voyage : 7 stratégies concrètes",
+    "excerpt": "7 stratégies concrètes pour protéger votre santé mentale en voyage, de la planification à la gestion du stress sur place.",
+    "tag": "Bien-être",
     "country": "",
-    "url": "https://odyssa-app.com/blog/organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles/",
-    "image": "https://odyssa-app.com/assets/blog/tips/organiser-un-voyage-de-derniere-minute-sans-stress-5-conseils-cles/cover.webp",
-    "date": "2026-08-17"
+    "url": "https://odyssa-app.com/blog/comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat/",
+    "image": "https://odyssa-app.com/assets/blog/tips/comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat/cover.webp",
+    "date": "2026-09-07"
   },
   {
     "type": "tip",
-    "slug": "comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe",
-    "title": "Comment choisir le meilleur hébergement pour un voyage en groupe ?",
-    "excerpt": "Sélectionnez l'hébergement parfait pour votre voyage en groupe",
-    "tag": "Organisation",
+    "slug": "les-6-destinations-europeennes-pour-un-voyage-culinaire",
+    "title": "Les 6 destinations européennes pour un voyage culinaire",
+    "excerpt": "Partez à la découverte des saveurs européennes : marchés, restaurants et produits locaux à ne pas manquer.",
+    "tag": "Gastronomie",
     "country": "",
-    "url": "https://odyssa-app.com/blog/comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe/",
-    "image": "https://odyssa-app.com/assets/blog/tips/comment-choisir-le-meilleur-hebergement-pour-un-voyage-en-groupe/cover.webp",
-    "date": "2026-08-17"
+    "url": "https://odyssa-app.com/blog/les-6-destinations-europeennes-pour-un-voyage-culinaire/",
+    "image": "https://odyssa-app.com/assets/blog/tips/les-6-destinations-europeennes-pour-un-voyage-culinaire/cover.webp",
+    "date": "2026-09-07"
   }
 ]

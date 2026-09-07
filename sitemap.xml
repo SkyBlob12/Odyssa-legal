@@ -2,27 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://odyssa-app.com/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/destinations/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/conseils/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/destinations/patagonie-chilienne/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/destinations/jordanie/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/destinations/afrique-du-sud/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://odyssa-app.com/blog/destinations/la-reunion/</loc>
@@ -105,6 +123,42 @@
   <url>
     <loc>https://odyssa-app.com/blog/destinations/maroc/</loc>
     <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/les-6-destinations-europeennes-pour-un-voyage-culinaire/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/pourquoi-inclure-des-activites-de-plein-air-dans-votre-itineraire-de-v/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://odyssa-app.com/blog/les-5-erreurs-a-eviter-lors-de-la-planification-d-un-voyage-a-l-etrang/</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
