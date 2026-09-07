@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Invitation Odyssa</title>
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Rejoins mon voyage sur Odyssa">
+<meta property="og:description" content="Ouvre ce lien depuis ton telephone pour rejoindre le voyage.">
+<!--
+  Page de rebond des invitations de voyage, servie par GitHub Pages a
+  l'emplacement /join/ du site odyssa-app.com. Elle est appelee par le lien que
+  l'app copie dans le presse-papier et encode dans le QR code
+  (`buildInviteLink`, constants/links.ts).
+
+  POURQUOI ELLE EXISTE. Le lien partage etait un scheme personnalise,
+  `odyssa://join/CODE`. Une messagerie ne rend cliquable que le `http(s)` : le
+  destinataire recevait du texte brut, sans rien a taper, et celui qui n'avait
+  pas encore l'app n'avait aucun repli vers le store. Une URL `https` est
+  cliquable partout, et cette page fait les deux choses qu'un scheme seul ne
+  sait pas faire : ouvrir l'app si elle est la, envoyer au store sinon.
+
+  Aucune ressource externe, aucun appel reseau : la page doit s'afficher et
+  rebondir avant meme que le reseau ne reponde.
+
+  Voir docs/INVITE_LINKS.md pour le deploiement et les tests.
+-->
+<style>
+  :root {
+    --ink: #1A1035;
+    --ink-soft: rgba(26, 16, 53, 0.72);
+    --rule: rgba(26, 16, 53, 0.16);
+    --bg: #F5F5F5;
+    --surface: #FFFFFF;
+    --accent: #FF2E74;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--surface);
+    border: 2px solid var(--ink);
+    border-radius: 24px;
+    box-shadow: 0 6px 0 var(--ink);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    letter-spacing: -0.4px;
+  }
+
+  p {
+    margin: 0 0 24px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  .code {
+    display: inline-block;
+    margin: 0 0 24px;
+    padding: 10px 18px;
+    border: 2px dashed var(--rule);
+    border-radius: 14px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 4px;
+  }
+
+  a.btn {
+    display: block;
+    margin-bottom: 12px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 2px solid var(--ink);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--surface);
+  }
+
+  a.btn.primary {
+    background: var(--accent);
+    border-color: var(--ink);
+    color: var(--surface);
+  }
+
+  a.btn:last-child { margin-bottom: 0; }
+
+  [hidden] { display: none !important; }
+
+  .hint {
+    margin: 20px 0 0;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<main class="card">
+  <h1 id="title">Invitation a un voyage</h1>
+  <p id="lead">Ouverture d'Odyssa...</p>
+  <div class="code" id="code" hidden></div>
+  <div id="actions" hidden>
+    <a class="btn primary" id="open" href="#">Ouvrir dans Odyssa</a>
+    <a class="btn" id="store" href="#" hidden>Telecharger Odyssa</a>
+    <a class="btn" id="ios" href="https://apps.apple.com/app/odyssa/id6758266472" hidden>App Store (iPhone)</a>
+    <a class="btn" id="android" href="https://play.google.com/store/apps/details?id=app.odyssa.travel" hidden>Google Play (Android)</a>
+  </div>
+  <p class="hint" id="hint" hidden></p>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  var IOS_STORE = 'https://apps.apple.com/app/odyssa/id6758266472';
+  var PLAY_STORE = 'https://play.google.com/store/apps/details?id=app.odyssa.travel';
+  var ANDROID_PACKAGE = 'app.odyssa.travel';
+
+  // Liste fermee : le scheme ne vient jamais de l'URL telle quelle, sans quoi
+  // n'importe qui pourrait faire ouvrir n'importe quelle application par un
+  // lien portant notre domaine.
+  var VARIANTS = {
+    '': { scheme: 'odyssa', pkg: ANDROID_PACKAGE },
+    dev: { scheme: 'odyssa-dev', pkg: null },
+    staging: { scheme: 'odyssa-staging', pkg: null }
+  };
+
+  var STRINGS = {
+    fr: {
+      title: 'Invitation a un voyage',
+      opening: 'Ouverture d’Odyssa…',
+      notInstalled: 'Odyssa ne s’est pas ouvert. Installe l’application, puis rouvre ce lien pour rejoindre le voyage.',
+      desktop: 'Ouvre ce lien depuis ton telephone, ou installe Odyssa puis saisis le code ci-dessus.',
+      invalid: 'Ce lien d’invitation est incomplet ou expire. Demande a la personne qui t’invite de le renvoyer.',
+      open: 'Ouvrir dans Odyssa',
+      download: 'Telecharger Odyssa',
+      hint: 'Deja installe ? Touche « Ouvrir dans Odyssa ».'
+    },
+    en: {
+      title: 'Trip invitation',
+      opening: 'Opening Odyssa…',
+      notInstalled: 'Odyssa did not open. Install the app, then open this link again to join the trip.',
+      desktop: 'Open this link on your phone, or install Odyssa and enter the code above.',
+      invalid: 'This invitation link is incomplete or expired. Ask the person who invited you to send it again.',
+      open: 'Open in Odyssa',
+      download: 'Get Odyssa',
+      hint: 'Already installed? Tap “Open in Odyssa”.'
+    }
+  };
+
+  var lang = (navigator.language || 'fr').slice(0, 2) === 'fr' ? 'fr' : 'en';
+  var t = STRINGS[lang];
+  document.documentElement.lang = lang;
+
+  var el = {
+    title: document.getElementById('title'),
+    lead: document.getElementById('lead'),
+    code: document.getElementById('code'),
+    actions: document.getElementById('actions'),
+    open: document.getElementById('open'),
+    store: document.getElementById('store'),
+    ios: document.getElementById('ios'),
+    android: document.getElementById('android'),
+    hint: document.getElementById('hint')
+  };
+
+  el.title.textContent = t.title;
+  el.open.textContent = t.open;
+  el.store.textContent = t.download;
+
+  var params = new URLSearchParams(location.search);
+
+  // Meme alphabet que `collaborationService.createInviteCode` : 8 caracteres,
+  // sans les glyphes qu'on confond a l'oral (I, O, 0, 1).
+  var raw = (params.get('c') || '').trim().toUpperCase();
+  var code = /^[A-Z2-9]{8}$/.test(raw) ? raw : null;
+
+  var variant = VARIANTS[params.get('v') || ''] || VARIANTS[''];
+
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+    (/Macintosh/i.test(ua) && 'ontouchend' in document);
+  var isAndroid = /Android/i.test(ua);
+
+  if (!code) {
+    el.lead.textContent = t.invalid;
+    el.actions.hidden = false;
+    el.open.hidden = true;
+    el.ios.hidden = false;
+    el.android.hidden = false;
+    return;
+  }
+
+  el.code.textContent = code;
+  el.code.hidden = false;
+
+  var deepLink = variant.scheme + '://join/' + code;
+  el.open.href = deepLink;
+
+  if (!isIOS && !isAndroid) {
+    el.lead.textContent = t.desktop;
+    el.actions.hidden = false;
+    el.open.hidden = true;
+    el.ios.hidden = false;
+    el.android.hidden = false;
+    return;
+  }
+
+  el.lead.textContent = t.opening;
+  el.store.href = isIOS ? IOS_STORE : PLAY_STORE;
+
+  // Sur Android, Chrome sait faire le travail entier : il ouvre l'app si elle
+  // repond au scheme, et suit `browser_fallback_url` sinon. Pas de minuterie a
+  // regler, donc pas de fiche store qui s'ouvre par-dessus une app qui vient
+  // de demarrer.
+  if (isAndroid) {
+    var intent = 'intent://join/' + code + '#Intent;scheme=' + variant.scheme;
+    if (variant.pkg) intent += ';package=' + variant.pkg;
+    intent += ';S.browser_fallback_url=' + encodeURIComponent(PLAY_STORE) + ';end';
+    el.open.href = intent;
+    location.href = intent;
+    revealAfter(2500);
+    return;
+  }
+
+  // Sur iOS il n'y a pas d'equivalent : on tente le scheme, et on ne juge de
+  // l'echec qu'au fait d'etre toujours a l'ecran. Sans ce garde-fou, la fiche
+  // App Store s'ouvrirait aussi quand l'app a bien demarre, au retour dans le
+  // navigateur.
+  var handedOff = false;
+
+  function markHandedOff() {
+    if (document.visibilityState === 'hidden') handedOff = true;
+  }
+
+  document.addEventListener('visibilitychange', markHandedOff);
+  window.addEventListener('pagehide', function () { handedOff = true; });
+
+  location.href = deepLink;
+
+  setTimeout(function () {
+    if (handedOff || document.visibilityState === 'hidden') return;
+    el.lead.textContent = t.notInstalled;
+    el.actions.hidden = false;
+    el.store.hidden = false;
+    el.hint.textContent = t.hint;
+    el.hint.hidden = false;
+  }, 1800);
+
+  /**
+   * Laisse apparaitre les boutons si le rebond n'a rien donne, Chrome ayant
+   * deja tranche de son cote.
+   */
+  function revealAfter(delay) {
+    setTimeout(function () {
+      if (document.visibilityState === 'hidden') return;
+      el.actions.hidden = false;
+      el.store.hidden = false;
+      el.hint.textContent = t.hint;
+      el.hint.hidden = false;
+    }, delay);
+  }
+})();
+</script>
+</body>
+</html>
