@@ -1,35 +1,35 @@
 [
   {
     "type": "destination",
-    "slug": "jordanie",
-    "title": "Jordanie en octobre : quel itinéraire pour profiter du climat doux et des sites phares ?",
-    "excerpt": "Octobre en Jordanie : climat doux, sites ouverts, conseils pratiques pour un séjour inoubliable.",
-    "tag": "Jordanie",
-    "country": "Jordanie",
-    "url": "https://odyssa-app.com/blog/destinations/jordanie/",
-    "image": "https://odyssa-app.com/assets/blog/destinations/jordanie/cover.webp",
-    "date": "2026-08-31"
+    "slug": "patagonie-chilienne",
+    "title": "Patagonie Chili en octobre : quel itinéraire et que prévoir ?",
+    "excerpt": "Octobre en Patagonie chilienne : climat idéal, moins de touristes, itinéraires sur mesure et conseils d'experts.",
+    "tag": "Chili",
+    "country": "Chili",
+    "url": "https://odyssa-app.com/blog/destinations/patagonie-chilienne/",
+    "image": "https://odyssa-app.com/assets/blog/destinations/patagonie-chilienne/cover.webp",
+    "date": "2026-09-07"
   },
   {
     "type": "tip",
-    "slug": "comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et",
-    "title": "Comment créer un itinéraire de voyage personnalisé avec Odyssa en 5 étapes concrètes",
-    "excerpt": "Découvrez comment Odyssa transforme vos envies en itinéraire précis, adapté à votre budget et à votre style de voyage.",
-    "tag": "Organisation",
+    "slug": "comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat",
+    "title": "Comment gérer les problèmes de santé mentale pendant un voyage : 7 stratégies concrètes",
+    "excerpt": "7 stratégies concrètes pour protéger votre santé mentale en voyage, de la planification à la gestion du stress sur place.",
+    "tag": "Bien-être",
     "country": "",
-    "url": "https://odyssa-app.com/blog/comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et/",
-    "image": "https://odyssa-app.com/assets/blog/tips/comment-creer-un-itineraire-de-voyage-personnalise-avec-odyssa-en-5-et/cover.webp",
-    "date": "2026-08-31"
+    "url": "https://odyssa-app.com/blog/comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat/",
+    "image": "https://odyssa-app.com/assets/blog/tips/comment-gerer-les-problemes-de-sante-mentale-pendant-un-voyage-7-strat/cover.webp",
+    "date": "2026-09-07"
   },
   {
     "type": "tip",
-    "slug": "pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon",
-    "title": "Pourquoi le voyage lent offre une expérience authentique et éco-responsable",
-    "excerpt": "Le voyage lent réduit votre impact environnemental tout en vous plongeant au cœur des cultures locales.",
-    "tag": "Éco-voyage",
+    "slug": "les-6-destinations-europeennes-pour-un-voyage-culinaire",
+    "title": "Les 6 destinations européennes pour un voyage culinaire",
+    "excerpt": "Partez à la découverte des saveurs européennes : marchés, restaurants et produits locaux à ne pas manquer.",
+    "tag": "Gastronomie",
     "country": "",
-    "url": "https://odyssa-app.com/blog/pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon/",
-    "image": "https://odyssa-app.com/assets/blog/tips/pourquoi-le-voyage-lent-offre-une-experience-authentique-et-eco-respon/cover.webp",
-    "date": "2026-08-31"
+    "url": "https://odyssa-app.com/blog/les-6-destinations-europeennes-pour-un-voyage-culinaire/",
+    "image": "https://odyssa-app.com/assets/blog/tips/les-6-destinations-europeennes-pour-un-voyage-culinaire/cover.webp",
+    "date": "2026-09-07"
   }
 ]
